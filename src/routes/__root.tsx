@@ -55,6 +55,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "Wilfred Asumboya" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Wilfred Asumboya" },
+      { property: "og:title", content: "Wilfred Asumboya — Biomedical AI Researcher" },
+      { name: "twitter:title", content: "Wilfred Asumboya — Biomedical AI Researcher" },
+      { property: "og:description", content: "Biomedical AI researcher building intelligent clinical systems for low-resource healthcare in Africa." },
+      { name: "twitter:description", content: "Biomedical AI researcher building intelligent clinical systems for low-resource healthcare in Africa." },
+      { name: "twitter:card", content: "summary" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
