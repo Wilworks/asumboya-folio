@@ -19,8 +19,7 @@ export function Reveal({ children, delay = 0, as: As = "div" }: { children: Reac
     io.observe(el);
     return () => io.disconnect();
   }, [delay]);
-  // @ts-expect-error ref polymorphic
-  return <As ref={ref} className="reveal">{children}</As>;
+  return <As ref={ref as React.Ref<HTMLElement>} className="reveal">{children}</As>;
 }
 
 export function LoadBar() {
