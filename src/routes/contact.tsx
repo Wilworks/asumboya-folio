@@ -1,0 +1,81 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/site/Nav";
+import { Footer } from "@/components/site/Footer";
+import { Reveal, LoadBar } from "@/components/site/Reveal";
+
+export const Route = createFileRoute("/contact")({
+  head: () => ({
+    meta: [
+      { title: "Contact — Wilfred Asumboya" },
+      { name: "description", content: "Open to research collaborations, speaking invitations, and conversations about AI in African healthcare." },
+      { property: "og:title", content: "Contact — Wilfred Asumboya" },
+      { property: "og:description", content: "Let's build something that matters." },
+    ],
+    links: [{ rel: "canonical", href: "/contact" }],
+  }),
+  component: Contact,
+});
+
+function Contact() {
+  return (
+    <>
+      <LoadBar />
+      <Nav dark />
+      <main className="contact-page">
+        <div className="container-x" style={{ position: "relative", zIndex: 2 }}>
+          <Reveal>
+            <h1 className="contact-headline">
+              Let&apos;s build something<br />that matters.
+            </h1>
+          </Reveal>
+          <Reveal delay={120}>
+            <p className="contact-sub">
+              Open to research collaborations, speaking invitations, and conversations about
+              AI in healthcare in Africa.
+            </p>
+          </Reveal>
+
+          <div className="contact-cards">
+            <Reveal delay={80}>
+              <div className="contact-card">
+                <div className="icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16v16H4z" /><path d="m4 6 8 7 8-7" /></svg>
+                </div>
+                <h3>Email</h3>
+                <div className="detail">wilfredasumboya@gmail.com</div>
+                <a href="mailto:wilfredasumboya@gmail.com" className="btn btn-primary">Send Email →</a>
+              </div>
+            </Reveal>
+            <Reveal delay={160}>
+              <div className="contact-card">
+                <div className="icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.06A4.16 4.16 0 0 1 17.6 8.7c4 0 4.74 2.63 4.74 6.05V21h-4v-5.4c0-1.3-.02-2.96-1.8-2.96-1.8 0-2.07 1.4-2.07 2.86V21h-4V9Z" /></svg>
+                </div>
+                <h3>LinkedIn</h3>
+                <div className="detail">linkedin.com/in/asumboya-wilfred-573321283</div>
+                <a href="https://linkedin.com/in/asumboya-wilfred-573321283" target="_blank" rel="noreferrer" className="btn btn-primary">View Profile →</a>
+              </div>
+            </Reveal>
+            <Reveal delay={240}>
+              <div className="contact-card">
+                <div className="icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.9-.4 3-.4s2.1.1 3 .4c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.3v3.4c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z" /></svg>
+                </div>
+                <h3>GitHub</h3>
+                <div className="detail">github.com/Wilworks</div>
+                <a href="https://github.com/Wilworks" target="_blank" rel="noreferrer" className="btn btn-primary">View GitHub →</a>
+              </div>
+            </Reveal>
+          </div>
+
+          <Reveal delay={320}>
+            <div className="location-line">
+              📍 Accra, Ghana · Available for remote research collaboration globally
+            </div>
+          </Reveal>
+        </div>
+      </main>
+      <Footer />
+    </>
+  );
+}
