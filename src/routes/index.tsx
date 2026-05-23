@@ -9,10 +9,10 @@ import researchMammo from "@/assets/research-deepmammo.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Wilfred Asumboya — Biomedical AI Researcher" },
-      { name: "description", content: "Biomedical engineering student at University of Ghana building AI for clinical decision support in low-resource healthcare." },
-      { property: "og:title", content: "Wilfred Asumboya — Biomedical AI Researcher" },
-      { property: "og:description", content: "Biomedical AI researcher · MIT Sloan correspondent · DeepMammo co-author." },
+      { title: "Wilfred Asumboya — AI/ML Engineer & Biomedical Researcher" },
+      { name: "description", content: "AI/ML engineer and biomedical engineering student building production clinical AI systems — multi-task models, RAG, explainable ML for low-resource healthcare." },
+      { property: "og:title", content: "Wilfred Asumboya — AI/ML Engineer & Biomedical Researcher" },
+      { property: "og:description", content: "AI/ML engineer · DeepMammo co-author · Head of AI at INNOGEN." },
     ],
     links: [{ rel: "canonical", href: "/" }],
   }),
@@ -20,14 +20,16 @@ export const Route = createFileRoute("/")({
 });
 
 const marqueeItems = [
-  "Biomedical AI", "Multi-Label Prediction", "DeepMammo", "University of Ghana",
-  "MIT Sloan", "INNOGEN", "Dean's Honour List", "Clinical Decision Support",
-  "Fourier Ptychography", "Airway Segmentation",
+  "AI / ML Engineering", "PyTorch", "TensorFlow", "Multi-Task Learning",
+  "RAG", "LLM Integration", "Explainable AI", "SHAP", "Django",
+  "Computer Vision", "Clinical Decision Support", "DeepMammo",
+  "Multi-Label Prediction", "Fourier Ptychography",
 ];
 
 const affiliations = [
-  "University of Ghana", "MIT Sloan", "INNOGEN",
+  "University of Ghana", "INNOGEN",
   "Innovate for Global Health", "Harvard Health Systems Hackathon", "UGAANA",
+  "SRC · UG", "GSBE-UG",
 ];
 
 function Index() {
