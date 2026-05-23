@@ -144,6 +144,25 @@ function About() {
         </div>
       </section>
 
+      {/* COURSES */}
+      <section className="section" style={{ background: "var(--cyan-tint)" }}>
+        <div className="container-x">
+          <Reveal><h2 className="section-heading">Courses I&apos;ve Loved</h2></Reveal>
+          <Reveal><p className="section-sub">A selection of courses from my Biomedical Engineering programme that shaped how I think and build.</p></Reveal>
+          <div className="courses-grid">
+            {courses.map((c, i) => (
+              <Reveal key={c.code} delay={i * 50}>
+                <div className="course-card">
+                  <div className="course-code">{c.code}</div>
+                  <h3>{c.title}</h3>
+                  <p>{c.note}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* VOLUNTEERING */}
       <section className="section" style={{ background: "var(--cyan-tint)" }}>
         <div className="container-x">
