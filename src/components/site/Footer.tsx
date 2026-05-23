@@ -7,7 +7,7 @@ export function Footer() {
         <div>
           <Link to="/" className="monogram">W<span className="dot">·</span>A</Link>
           <p className="footer-bio">
-            Biomedical AI researcher building intelligent clinical systems for low-resource healthcare settings in Africa.
+            AI / ML engineer and biomedical researcher building production clinical AI systems for low-resource healthcare in Africa.
           </p>
         </div>
         <div className="footer-col">
@@ -17,6 +17,7 @@ export function Footer() {
             <li><Link to="/research">Research</Link></li>
             <li><Link to="/projects">Projects</Link></li>
             <li><Link to="/leadership">Leadership</Link></li>
+            <li><Link to="/gallery">Gallery</Link></li>
             <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
