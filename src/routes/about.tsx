@@ -81,9 +81,9 @@ function About() {
               </p>
               <p>
                 Now I&apos;m at the University of Ghana studying Biomedical Engineering, on the
-                Dean&apos;s Honour List from Level 100 through Level 300, leading AI work at
-                INNOGEN, and in correspondence with MIT Sloan on a study of multi-label clinical
-                architectures.
+                Dean&apos;s Honour List from Level 100 through Level 300, and leading AI work at
+                INNOGEN — shipping multi-task models, RAG pipelines, and explainable systems
+                that are built to actually deploy.
               </p>
               <p className="pull-quote">
                 The infrastructure I want to build won&apos;t be flashy. It will be the kind of
