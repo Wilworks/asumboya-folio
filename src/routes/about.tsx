@@ -19,9 +19,21 @@ export const Route = createFileRoute("/about")({
 
 const mentors = [
   { name: "Dr. Cletus Fiifi Adams", inst: "University of Ghana", desc: "Primary research supervisor across multi-label prediction, DeepMammo, and airway segmentation work." },
-  { name: "Prof. Rama Ramakrishnan", inst: "MIT Sloan School of Management", desc: "Active research correspondence on the multi-label neural network architecture study." },
-  { name: "Prof. Elsie Effah Kaufmann", inst: "University of Ghana", desc: "Mentor on Fourier Ptychography. Featured Wilfred in the LinkedIn Superstar Series." },
-  { name: "Prof. Samuel Kojo Kwofie", inst: "University of Ghana", desc: "Research Assistant supervisor on computational biology and cheminformatics work." },
+  { name: "Prof. Elvis Tiburu Kwason", inst: "University of Ghana", desc: "Supervisor on the Fort Amsterdam Neutron Activation Analysis project and ongoing scientific correspondence." },
+  { name: "Prof. Elsie Effah Kaufmann", inst: "University of Ghana", desc: "Mentor on the Fourier Ptychography microscopy project. Featured Wilfred in the NSMQ Superstar Spotlight." },
+  { name: "Prof. Samuel Kojo Kwofie", inst: "University of Ghana", desc: "Research Assistant supervisor at IAST on medical imaging and digital mental health AI." },
+  { name: "Prof. Kwabena Kan-Dapaah", inst: "University of Ghana", desc: "Co-supervisor on the explainable multi-task diabetes complications framework." },
+];
+
+const courses = [
+  { code: "BMEN 305", title: "Biomedical Signal Processing", note: "Filtering, spectral analysis, ECG/EEG pipelines." },
+  { code: "BMEN 311", title: "Medical Imaging Systems", note: "CT, MRI, ultrasound physics and reconstruction." },
+  { code: "BMEN 401", title: "Machine Learning for Biomedicine", note: "Classical ML and deep learning on clinical data." },
+  { code: "BMEN 322", title: "Biostatistics & Experimental Design", note: "Hypothesis testing, study power, controlled comparisons." },
+  { code: "BMEN 308", title: "Physiological Modelling", note: "Compartmental models of disease dynamics." },
+  { code: "BMEN 412", title: "Computational Imaging", note: "Phase retrieval, Fourier ptychography, inverse problems." },
+  { code: "MATH 226", title: "Linear Algebra & Numerical Methods", note: "Foundations for deep learning and optimisation." },
+  { code: "CSEN 204", title: "Data Structures & Algorithms", note: "Engineering rigour behind production ML systems." },
 ];
 
 const awards = [
