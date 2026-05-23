@@ -19,9 +19,21 @@ export const Route = createFileRoute("/about")({
 
 const mentors = [
   { name: "Dr. Cletus Fiifi Adams", inst: "University of Ghana", desc: "Primary research supervisor across multi-label prediction, DeepMammo, and airway segmentation work." },
-  { name: "Prof. Rama Ramakrishnan", inst: "MIT Sloan School of Management", desc: "Active research correspondence on the multi-label neural network architecture study." },
-  { name: "Prof. Elsie Effah Kaufmann", inst: "University of Ghana", desc: "Mentor on Fourier Ptychography. Featured Wilfred in the LinkedIn Superstar Series." },
-  { name: "Prof. Samuel Kojo Kwofie", inst: "University of Ghana", desc: "Research Assistant supervisor on computational biology and cheminformatics work." },
+  { name: "Prof. Elvis Tiburu Kwason", inst: "University of Ghana", desc: "Supervisor on the Fort Amsterdam Neutron Activation Analysis project and ongoing scientific correspondence." },
+  { name: "Prof. Elsie Effah Kaufmann", inst: "University of Ghana", desc: "Mentor on the Fourier Ptychography microscopy project. Featured Wilfred in the NSMQ Superstar Spotlight." },
+  { name: "Prof. Samuel Kojo Kwofie", inst: "University of Ghana", desc: "Research Assistant supervisor at IAST on medical imaging and digital mental health AI." },
+  { name: "Prof. Kwabena Kan-Dapaah", inst: "University of Ghana", desc: "Co-supervisor on the explainable multi-task diabetes complications framework." },
+];
+
+const courses = [
+  { code: "BMEN 305", title: "Biomedical Signal Processing", note: "Filtering, spectral analysis, ECG/EEG pipelines." },
+  { code: "BMEN 311", title: "Medical Imaging Systems", note: "CT, MRI, ultrasound physics and reconstruction." },
+  { code: "BMEN 401", title: "Machine Learning for Biomedicine", note: "Classical ML and deep learning on clinical data." },
+  { code: "BMEN 322", title: "Biostatistics & Experimental Design", note: "Hypothesis testing, study power, controlled comparisons." },
+  { code: "BMEN 308", title: "Physiological Modelling", note: "Compartmental models of disease dynamics." },
+  { code: "BMEN 412", title: "Computational Imaging", note: "Phase retrieval, Fourier ptychography, inverse problems." },
+  { code: "MATH 226", title: "Linear Algebra & Numerical Methods", note: "Foundations for deep learning and optimisation." },
+  { code: "CSEN 204", title: "Data Structures & Algorithms", note: "Engineering rigour behind production ML systems." },
 ];
 
 const awards = [
@@ -69,9 +81,9 @@ function About() {
               </p>
               <p>
                 Now I&apos;m at the University of Ghana studying Biomedical Engineering, on the
-                Dean&apos;s Honour List from Level 100 through Level 300, leading AI work at
-                INNOGEN, and in correspondence with MIT Sloan on a study of multi-label clinical
-                architectures.
+                Dean&apos;s Honour List from Level 100 through Level 300, and leading AI work at
+                INNOGEN — shipping multi-task models, RAG pipelines, and explainable systems
+                that are built to actually deploy.
               </p>
               <p className="pull-quote">
                 The infrastructure I want to build won&apos;t be flashy. It will be the kind of
@@ -132,8 +144,27 @@ function About() {
         </div>
       </section>
 
-      {/* VOLUNTEERING */}
+      {/* COURSES */}
       <section className="section" style={{ background: "var(--cyan-tint)" }}>
+        <div className="container-x">
+          <Reveal><h2 className="section-heading">Courses I&apos;ve Loved</h2></Reveal>
+          <Reveal><p className="section-sub">A selection of courses from my Biomedical Engineering programme that shaped how I think and build.</p></Reveal>
+          <div className="courses-grid">
+            {courses.map((c, i) => (
+              <Reveal key={c.code} delay={i * 50}>
+                <div className="course-card">
+                  <div className="course-code">{c.code}</div>
+                  <h3>{c.title}</h3>
+                  <p>{c.note}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* VOLUNTEERING */}
+      <section className="section">
         <div className="container-x">
           <Reveal><h2 className="section-heading">Volunteering &amp; Community</h2></Reveal>
           <div className="two-col">

@@ -9,10 +9,10 @@ import researchMammo from "@/assets/research-deepmammo.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Wilfred Asumboya — Biomedical AI Researcher" },
-      { name: "description", content: "Biomedical engineering student at University of Ghana building AI for clinical decision support in low-resource healthcare." },
-      { property: "og:title", content: "Wilfred Asumboya — Biomedical AI Researcher" },
-      { property: "og:description", content: "Biomedical AI researcher · MIT Sloan correspondent · DeepMammo co-author." },
+      { title: "Wilfred Asumboya — AI/ML Engineer & Biomedical Researcher" },
+      { name: "description", content: "AI/ML engineer and biomedical engineering student building production clinical AI systems — multi-task models, RAG, explainable ML for low-resource healthcare." },
+      { property: "og:title", content: "Wilfred Asumboya — AI/ML Engineer & Biomedical Researcher" },
+      { property: "og:description", content: "AI/ML engineer · DeepMammo co-author · Head of AI at INNOGEN." },
     ],
     links: [{ rel: "canonical", href: "/" }],
   }),
@@ -20,14 +20,16 @@ export const Route = createFileRoute("/")({
 });
 
 const marqueeItems = [
-  "Biomedical AI", "Multi-Label Prediction", "DeepMammo", "University of Ghana",
-  "MIT Sloan", "INNOGEN", "Dean's Honour List", "Clinical Decision Support",
-  "Fourier Ptychography", "Airway Segmentation",
+  "AI / ML Engineering", "PyTorch", "TensorFlow", "Multi-Task Learning",
+  "RAG", "LLM Integration", "Explainable AI", "SHAP", "Django",
+  "Computer Vision", "Clinical Decision Support", "DeepMammo",
+  "Multi-Label Prediction", "Fourier Ptychography",
 ];
 
 const affiliations = [
-  "University of Ghana", "MIT Sloan", "INNOGEN",
+  "University of Ghana", "INNOGEN",
   "Innovate for Global Health", "Harvard Health Systems Hackathon", "UGAANA",
+  "SRC · UG", "GSBE-UG",
 ];
 
 function Index() {
@@ -43,7 +45,7 @@ function Index() {
         <div className="blob blob-2" />
         <div className="container-x hero-grid">
           <div>
-            <Reveal><div className="eyebrow">// Biomedical AI Researcher</div></Reveal>
+            <Reveal><div className="eyebrow">// AI / ML Engineer · Biomedical Researcher</div></Reveal>
             <Reveal delay={80}>
               <h1 className="hero-name">
                 WILFRED<br />
@@ -51,23 +53,24 @@ function Index() {
               </h1>
             </Reveal>
             <Reveal delay={160}>
-              <p className="hero-subtitle">Biomedical Engineering · AI &amp; ML · University of Ghana</p>
+              <p className="hero-subtitle">AI / ML Engineer · Biomedical Engineering · University of Ghana</p>
             </Reveal>
             <Reveal delay={240}>
               <p className="hero-para">
-                Building intelligent clinical systems for low-resource healthcare settings in Africa.
-                In active research correspondence with MIT Sloan, with a preprint in mammography AI.
+                I build production-grade AI systems — multi-task deep learning, RAG pipelines,
+                and explainable ML — with a focus on clinical decision support for low-resource
+                healthcare in Africa. Head of AI at INNOGEN. DeepMammo co-author.
               </p>
             </Reveal>
             <Reveal delay={320}>
               <div className="cta-row">
-                <Link to="/research" className="btn btn-primary">View My Research →</Link>
-                <Link to="/projects" className="btn btn-outline">See My Work</Link>
+                <Link to="/projects" className="btn btn-primary">See What I&apos;ve Built →</Link>
+                <Link to="/research" className="btn btn-outline">View Research</Link>
               </div>
             </Reveal>
             <Reveal delay={400}>
               <div className="trust-row">
-                Dean&apos;s Honour List · MIT Sloan · INNOGEN Head of AI
+                PyTorch · TensorFlow · Django · RAG · SHAP · LLM Integration
               </div>
             </Reveal>
           </div>
