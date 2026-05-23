@@ -164,7 +164,7 @@ function About() {
       </section>
 
       {/* VOLUNTEERING */}
-      <section className="section" style={{ background: "var(--cyan-tint)" }}>
+      <section className="section">
         <div className="container-x">
           <Reveal><h2 className="section-heading">Volunteering &amp; Community</h2></Reveal>
           <div className="two-col">
