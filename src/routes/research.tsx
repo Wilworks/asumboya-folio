@@ -134,24 +134,6 @@ function Research() {
         </div>
       </section>
 
-      <section className="mit-callout">
-        <div className="container-x">
-          <Reveal>
-            <blockquote className="quote">
-              &ldquo;In active research correspondence with Prof. Rama Ramakrishnan,
-              MIT Sloan School of Management.&rdquo;
-            </blockquote>
-          </Reveal>
-          <Reveal delay={120}>
-            <p>
-              The exchange centers on the multi-label neural network architectures study —
-              specifically the interpretation of negative interaction parameters across CRF
-              and bilinear output layers as evidence of shared backbone capacity.
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
       <Footer />
     </>
   );
