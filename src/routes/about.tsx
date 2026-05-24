@@ -23,17 +23,25 @@ const mentors = [
   { name: "Prof. Elsie Effah Kaufmann", inst: "University of Ghana", desc: "Mentor on the Fourier Ptychography microscopy project. Featured Wilfred in the NSMQ Superstar Spotlight." },
   { name: "Prof. Samuel Kojo Kwofie", inst: "University of Ghana", desc: "Research Assistant supervisor at IAST on medical imaging and digital mental health AI." },
   { name: "Prof. Kwabena Kan-Dapaah", inst: "University of Ghana", desc: "Co-supervisor on the explainable multi-task diabetes complications framework." },
+  { name: "Prof. Rama Ramakrishnan", inst: "MIT Sloan School of Management", desc: "Active research correspondence on applied machine learning, decision systems, and translating models into real-world deployment." },
 ];
 
 const courses = [
-  { code: "BMEN 305", title: "Biomedical Signal Processing", note: "Filtering, spectral analysis, ECG/EEG pipelines." },
-  { code: "BMEN 311", title: "Medical Imaging Systems", note: "CT, MRI, ultrasound physics and reconstruction." },
-  { code: "BMEN 401", title: "Machine Learning for Biomedicine", note: "Classical ML and deep learning on clinical data." },
-  { code: "BMEN 322", title: "Biostatistics & Experimental Design", note: "Hypothesis testing, study power, controlled comparisons." },
-  { code: "BMEN 308", title: "Physiological Modelling", note: "Compartmental models of disease dynamics." },
-  { code: "BMEN 412", title: "Computational Imaging", note: "Phase retrieval, Fourier ptychography, inverse problems." },
-  { code: "MATH 226", title: "Linear Algebra & Numerical Methods", note: "Foundations for deep learning and optimisation." },
-  { code: "CSEN 204", title: "Data Structures & Algorithms", note: "Engineering rigour behind production ML systems." },
+  { code: "BMEN208", title: "Medical Imaging" },
+  { code: "BMEN303", title: "Bioinstrumentation" },
+  { code: "BMEN305", title: "Biomaterials" },
+  { code: "BMEN307", title: "Biomechanics" },
+  { code: "BMEN311", title: "Cell, Molecular Biology & Biotechnology" },
+  { code: "BMEN315", title: "Research Methodology" },
+  { code: "BMEN318", title: "Tissue Engineering" },
+  { code: "BMEN324", title: "Biomedical Engineering Systems" },
+  { code: "BMEN214", title: "Transport Processes in Living Systems" },
+  { code: "BMEN212", title: "Engineering Principles of Physiology & Anatomy" },
+  { code: "BMEN205", title: "Anatomy and Physiology" },
+  { code: "SENG201", title: "Linear Algebra" },
+  { code: "SENG202", title: "Differential Equations" },
+  { code: "SENG207", title: "Programming for Engineers" },
+  { code: "SENG301", title: "Numerical Methods" },
 ];
 
 const awards = [
@@ -155,7 +163,7 @@ function About() {
                 <div className="course-card">
                   <div className="course-code">{c.code}</div>
                   <h3>{c.title}</h3>
-                  <p>{c.note}</p>
+                  
                 </div>
               </Reveal>
             ))}
