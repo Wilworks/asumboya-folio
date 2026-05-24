@@ -163,7 +163,7 @@ function About() {
                 <div className="course-card">
                   <div className="course-code">{c.code}</div>
                   <h3>{c.title}</h3>
-                  <p>{c.note}</p>
+                  
                 </div>
               </Reveal>
             ))}
