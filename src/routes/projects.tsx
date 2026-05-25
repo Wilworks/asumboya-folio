@@ -86,6 +86,12 @@ const projects: {
     tech: ["Django", "Excel", "JavaScript", "Chart.js"],
     img: imgGold,
   },
+  {
+    title: "Weather Tracking App", tag: "Tools",
+    desc: "Mobile app integrating live API feeds to track and visualize weather forecasts with interactive temperature graphs and forecast cards.",
+    tech: ["JavaScript", "REST API", "Mobile"],
+    img: imgWeather,
+  },
 ];
 
 const filters = ["All", "Clinical AI", "Web Apps", "ML Models", "Tools"] as const;
