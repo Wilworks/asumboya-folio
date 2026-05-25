@@ -33,7 +33,19 @@ const projects: {
   title: string; tag: Tag; desc: string; tech: string[]; img: string; featured?: boolean;
 }[] = [
   {
-    title: "Nexus Intellisense", tag: "Clinical AI", featured: true,
+    title: "DermaVision", tag: "Clinical AI", featured: true,
+    desc: "Production Django + DRF inference API wrapping a DINOv2-Base vision model fine-tuned on 31 skin disease classes, exported to ONNX for lightweight CPU deployment. Integrates Groq Llama 3.3 70B for structured dermatology reports and ReportLab-generated PDF handouts. Deployed on Hugging Face Spaces via Docker.",
+    tech: ["Django", "DRF", "DINOv2", "ONNX Runtime", "GradCAM", "Groq LLM", "Docker"],
+    img: imgDerma,
+  },
+  {
+    title: "DeepMammo Inference API", tag: "Clinical AI", featured: true,
+    desc: "Full-stack clinical AI inference system wrapping the DeepMammo mammography model as a production REST API. Returns abnormality type, pathology prediction, segmentation mask, GradCAM saliency, structured clinical report, and PDF — from a single POST request. ONNX export cut Docker image size by ~800MB.",
+    tech: ["PyTorch", "ONNX", "Django", "DRF", "Groq LLM", "ReportLab", "Docker", "HF Spaces"],
+    img: imgMammoApi,
+  },
+  {
+    title: "Nexus Intellisense", tag: "Clinical AI",
     desc: "Django-based multi-task disease prediction system for low-resource healthcare. Implements SHAP-based explainability and RAG-powered clinical recommendations. End-to-end from data ingestion to a clinician-facing interface with real-time inference.",
     tech: ["Django", "PyTorch", "SHAP", "RAG", "PostgreSQL", "REST API"],
     img: imgNexus,
