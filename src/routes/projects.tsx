@@ -10,6 +10,9 @@ import imgEqui from "@/assets/project-equibase.jpg";
 import imgSglt from "@/assets/project-sglt2.jpg";
 import imgVoice from "@/assets/project-voice.jpg";
 import imgGold from "@/assets/project-gold.jpg";
+import imgDerma from "@/assets/project-dermavision.jpg";
+import imgMammoApi from "@/assets/project-deepmammo-api.jpg";
+import imgWeather from "@/assets/project-weather.jpg";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
