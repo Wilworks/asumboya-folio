@@ -973,6 +973,22 @@
   border-radius: 50px;
 }
 
+.proj-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--cyan-deep);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.proj-link:hover {
+  color: var(--cyan);
+  transform: translateX(3px);
+}
+
 .proj-featured {
   grid-column: span 3;
   display: grid;
