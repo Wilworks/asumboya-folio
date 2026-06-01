@@ -139,6 +139,16 @@ function Projects() {
                     <div className="tech-row">
                       {p.tech.map((t) => <span key={t} className="tech-pill">{t}</span>)}
                     </div>
+                    {p.link && (
+                      <a
+                        href={p.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="proj-link"
+                      >
+                        View on Hugging Face →
+                      </a>
+                    )}
                   </div>
                 </article>
               </Reveal>
