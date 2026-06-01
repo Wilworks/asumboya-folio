@@ -30,19 +30,21 @@ export const Route = createFileRoute("/projects")({
 type Tag = "Clinical AI" | "Web Apps" | "ML Models" | "Tools";
 
 const projects: {
-  title: string; tag: Tag; desc: string; tech: string[]; img: string; featured?: boolean;
+  title: string; tag: Tag; desc: string; tech: string[]; img: string; featured?: boolean; link?: string;
 }[] = [
   {
     title: "DermaVision", tag: "Clinical AI", featured: true,
     desc: "Production Django + DRF inference API wrapping a DINOv2-Base vision model fine-tuned on 31 skin disease classes, exported to ONNX for lightweight CPU deployment. Integrates Groq Llama 3.3 70B for structured dermatology reports and ReportLab-generated PDF handouts. Deployed on Hugging Face Spaces via Docker.",
     tech: ["Django", "DRF", "DINOv2", "ONNX Runtime", "GradCAM", "Groq LLM", "Docker"],
     img: imgDerma,
+    link: "https://huggingface.co/spaces/WilfredAyine/DermaDetect",
   },
   {
     title: "DeepMammo Inference API", tag: "Clinical AI", featured: true,
     desc: "Full-stack clinical AI inference system wrapping the DeepMammo mammography model as a production REST API. Returns abnormality type, pathology prediction, segmentation mask, GradCAM saliency, structured clinical report, and PDF — from a single POST request. ONNX export cut Docker image size by ~800MB.",
     tech: ["PyTorch", "ONNX", "Django", "DRF", "Groq LLM", "ReportLab", "Docker", "HF Spaces"],
     img: imgMammoApi,
+    link: "https://huggingface.co/spaces/WilfredAyine/deepmammo",
   },
   {
     title: "Nexus Intellisense", tag: "Clinical AI",
