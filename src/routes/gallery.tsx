@@ -46,7 +46,7 @@ function Gallery() {
         <div className="container-x">
           <div className="gallery-grid">
             {slots.map((s, i) => (
-              <Reveal key={i} delay={i * 40}>
+              <Reveal key={s.caption} delay={i * 40}>
                 <figure className="gallery-item">
                   {s.src ? (
                     <img src={s.src} alt={s.caption} loading="lazy" />

@@ -844,7 +844,8 @@
   grid-template-columns: 1fr 1fr;
   gap: 28px;
 }
-@media (max-width: 900px) { .research-grid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .research-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .research-grid { grid-template-columns: 1fr; } }
 
 .res-card {
   background: white;
@@ -925,7 +926,8 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
-@media (max-width: 900px) { .projects-grid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 580px)  { .projects-grid { grid-template-columns: 1fr; } }
 
 .proj-card {
   background: white;
@@ -995,7 +997,8 @@
   grid-template-columns: 1fr 1fr;
   padding: 0;
 }
-@media (max-width: 900px) { .proj-featured { grid-column: span 1; grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .proj-featured { grid-column: span 2; grid-template-columns: 1fr; } }
+@media (max-width: 580px)  { .proj-featured { grid-column: span 1; } }
 .proj-featured img { height: 100%; min-height: 320px; }
 .proj-featured .proj-body { padding: 40px; }
 .proj-featured h3 { font-size: 2rem; }
@@ -1342,4 +1345,38 @@
   0% { width: 0; opacity: 1; }
   70% { width: 100%; opacity: 1; }
   100% { width: 100%; opacity: 0; }
+}
+
+/* ---------- Awards table — mobile horizontal scroll ---------- */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  margin-top: 40px;
+}
+/* When wrapped, remove the table's own shadow/radius (handled by wrapper) */
+.table-scroll .awards-table {
+  margin-top: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* ---------- Reduced motion — disable all animations ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Reveal: show content instantly, skip the fade-in */
+  .reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }

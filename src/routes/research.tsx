@@ -102,11 +102,13 @@ function Research() {
         </div>
       </header>
 
-      <div className="filter-bar">
+      <div className="filter-bar" role="group" aria-label="Filter research by status">
         {filters.map((f) => (
           <button
             key={f}
+            type="button"
             className={`filter-pill${active === f ? " active" : ""}`}
+            aria-pressed={active === f}
             onClick={() => setActive(f)}
           >
             {f}
@@ -126,7 +128,7 @@ function Research() {
                   <div className="dataset">{p.meta}</div>
                   <p className="desc">{p.desc}</p>
                   <div className="key">{p.key}</div>
-                  <img src={p.img} alt="" loading="lazy" width={768} height={512} />
+                  <img src={p.img} alt={`${p.title} — research illustration`} loading="lazy" width={768} height={512} />
                 </article>
               </Reveal>
             ))}

@@ -36,6 +36,7 @@ export function Nav({ dark = false }: { dark?: boolean }) {
           </ul>
           <a className="cv-btn" href="/cv.pdf" download="Wilfred-Asumboya-CV.pdf">Download CV</a>
           <button
+            type="button"
             className="hamburger"
             aria-label="Open menu"
             onClick={() => setOpen((o) => !o)}

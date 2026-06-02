@@ -113,11 +113,13 @@ function Projects() {
         </div>
       </header>
 
-      <div className="filter-bar">
+      <div className="filter-bar" role="group" aria-label="Filter projects by category">
         {filters.map((f) => (
           <button
             key={f}
+            type="button"
             className={`filter-pill${active === f ? " active" : ""}`}
+            aria-pressed={active === f}
             onClick={() => setActive(f)}
           >
             {f}
@@ -131,7 +133,7 @@ function Projects() {
             {shown.map((p, i) => (
               <Reveal key={p.title} delay={i * 60}>
                 <article className={`proj-card${p.featured ? " proj-featured" : ""}`}>
-                  <img src={p.img} alt="" loading="lazy" />
+                  <img src={p.img} alt={`${p.title} project screenshot`} loading="lazy" />
                   <div className="proj-body">
                     <span className="tag">{p.tag}</span>
                     <h3>{p.title}</h3>

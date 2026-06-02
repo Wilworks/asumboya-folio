@@ -138,7 +138,7 @@ function About() {
         <div className="container-x">
           <Reveal><h2 className="section-heading">Mentors &amp; Correspondence</h2></Reveal>
           <Reveal><p className="section-sub">The people whose questions and standards have shaped how I work.</p></Reveal>
-          <div className="three-col" style={{ gridTemplateColumns: "repeat(2, 1fr)" }}>
+          <div className="two-col" style={{ gridTemplateColumns: "repeat(2, 1fr)" }}>
             {mentors.map((m, i) => (
               <Reveal key={m.name} delay={i * 80}>
                 <div className="mentor-card">
@@ -204,7 +204,7 @@ function About() {
       <section className="section">
         <div className="container-x">
           <Reveal><h2 className="section-heading">Awards &amp; Recognition</h2></Reveal>
-          <Reveal>
+          <div className="table-scroll">
             <table className="awards-table">
               <thead>
                 <tr><th>Award</th><th>Institution</th><th>Year</th></tr>
@@ -219,7 +219,7 @@ function About() {
                 ))}
               </tbody>
             </table>
-          </Reveal>
+          </div>
         </div>
       </section>
 
