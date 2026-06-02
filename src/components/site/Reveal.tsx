@@ -1,25 +1,22 @@
-import { useEffect, useRef, type ReactNode, type ElementType } from "react";
+import { type ReactNode, type ElementType, type CSSProperties } from "react";
 
-export function Reveal({ children, delay = 0, as: As = "div" }: { children: ReactNode; delay?: number; as?: ElementType }) {
-  const ref = useRef<HTMLElement | null>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            setTimeout(() => el.classList.add("in"), delay);
-            io.unobserve(el);
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, [delay]);
-  return <As ref={ref as React.Ref<HTMLElement>} className="reveal">{children}</As>;
+export function Reveal({
+  children,
+  delay = 0,
+  as: As = "div",
+}: {
+  children: ReactNode;
+  delay?: number;
+  as?: ElementType;
+}) {
+  return (
+    <As
+      className="reveal"
+      style={{ "--reveal-delay": `${delay}ms` } as CSSProperties}
+    >
+      {children}
+    </As>
+  );
 }
 
 export function LoadBar() {

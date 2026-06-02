@@ -1304,11 +1304,25 @@
 }
 
 /* ---------- Reveal animation ---------- */
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+/* Use CSS @keyframes so content is ALWAYS visible, even if JS fails.
+   The delay is driven by a --reveal-delay CSS custom property set inline. */
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
+.reveal {
+  animation: revealUp 0.8s ease both;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+/* Keep the .in class for compatibility but it's no longer required */
 .reveal.in {
   opacity: 1;
   transform: translateY(0);
