@@ -7,9 +7,9 @@ import imgNexus from "@/assets/project-nexus.jpg";
 import imgNstp from "@/assets/project-nstp.jpg";
 import imgMind from "@/assets/project-mindmesh.jpg";
 import imgEqui from "@/assets/project-equibase.jpg";
-import imgSglt from "@/assets/project-sglt2.jpg";
-import imgVoice from "@/assets/project-voice.jpg";
-import imgGold from "@/assets/project-gold.jpg";
+import imgSglt from "@/assets/project-sglt2.png";
+import imgVoice from "@/assets/project-voice.png";
+import imgGold from "@/assets/project-gold.png";
 import imgDerma from "@/assets/project-dermavision.jpg";
 import imgMammoApi from "@/assets/project-deepmammo-api.jpg";
 import imgWeather from "@/assets/project-weather.jpg";
@@ -138,7 +138,13 @@ function Projects() {
               >
                 <article className={`proj-card${p.featured ? " proj-featured" : ""}`}>
                   <div className="proj-media">
-                    <img src={p.img} alt={`${p.title} project screenshot`} loading="lazy" />
+                    {p.link ? (
+                      <a href={p.link} target="_blank" rel="noopener noreferrer" style={{ display: "block", height: "100%" }}>
+                        <img src={p.img} alt={`${p.title} project screenshot`} loading="lazy" />
+                      </a>
+                    ) : (
+                      <img src={p.img} alt={`${p.title} project screenshot`} loading="lazy" />
+                    )}
                     {!p.featured && (
                       <div className="proj-overlay">
                         <span className="proj-overlay-tag">{p.tag}</span>
@@ -150,7 +156,15 @@ function Projects() {
                       <span className="proj-featured-badge">★ Featured</span>
                     )}
                     {!p.featured && <span className="tag">{p.tag}</span>}
-                    <h3>{p.title}</h3>
+                    <h3>
+                      {p.link ? (
+                        <a href={p.link} target="_blank" rel="noopener noreferrer">
+                          {p.title}
+                        </a>
+                      ) : (
+                        p.title
+                      )}
+                    </h3>
                     <p>{p.desc}</p>
                     <div className="tech-row">
                       {p.tech.map((t) => <span key={t} className="tech-pill">{t}</span>)}
