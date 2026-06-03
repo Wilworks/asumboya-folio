@@ -113,6 +113,7 @@ function About() {
                 <div className="meta">BSc. Biomedical Engineering · Level 300</div>
                 <ul>
                   <li>Expected January 2028</li>
+                  <li>First Class Honours (Distinction)</li>
                   <li>UGAANA Scholar</li>
                   <li>Dean&apos;s Honour List — L100 through L300</li>
                 </ul>

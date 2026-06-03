@@ -143,8 +143,8 @@ function Index() {
               <span className="stat-card-label">Years Building</span>
             </div></Reveal>
             <Reveal delay={300}><div className="stat-card">
-              <span className="stat-card-num">1</span>
-              <span className="stat-card-label">Hospital Deployment</span>
+              <span className="stat-card-num">1st</span>
+              <span className="stat-card-label">Class Honours</span>
             </div></Reveal>
           </div>
         </div>

@@ -129,9 +129,13 @@ function Projects() {
 
       <section className="section" style={{ paddingTop: 60 }}>
         <div className="container-x">
-          <div className="projects-grid">
+          <div className="projects-grid" key={active}>
             {shown.map((p, i) => (
-              <Reveal key={p.title} delay={i * 60}>
+              <Reveal
+                key={p.title}
+                delay={i * 60}
+                style={{ gridColumn: p.featured ? "1 / -1" : undefined }}
+              >
                 <article className={`proj-card${p.featured ? " proj-featured" : ""}`}>
                   <div className="proj-media">
                     <img src={p.img} alt={`${p.title} project screenshot`} loading="lazy" />
