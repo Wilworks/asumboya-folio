@@ -39,7 +39,13 @@ export function Footer() {
         </div>
       </div>
       <div className="container-x footer-bottom">
-        © {CURRENT_YEAR} Wilfred Asumboya · Accra, Ghana
+        <span>© {CURRENT_YEAR} Wilfred Asumboya · Accra, Ghana</span>
+        <button
+          type="button"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          ↑ Back to top
+        </button>
       </div>
     </footer>
   );

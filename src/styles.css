@@ -1514,18 +1514,43 @@
   border-radius: 50%;
   background: rgba(255,255,255,0.06);
   display: flex; align-items: center; justify-content: center;
-  transition: all 0.2s ease;
+  transition:
+    transform var(--dur-normal) var(--ease-spring),
+    box-shadow var(--dur-normal) var(--ease-out),
+    background var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
+  cursor: pointer;
 }
-.social-btn:hover { background: var(--cyan); color: white; }
+.social-btn:hover {
+  background: var(--cyan);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 196, 214, 0.3);
+}
 
 .footer-bottom {
   margin-top: 48px;
   padding-top: 24px;
   border-top: 1px solid rgba(255,255,255,0.1);
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
   font-family: var(--font-mono);
   font-size: 0.78rem;
   color: rgba(255,255,255,0.4);
+}
+.footer-bottom button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.footer-bottom button:hover {
+  color: var(--cyan);
 }
 
 /* ---------- Courses ---------- */
