@@ -45,32 +45,41 @@ function Index() {
         <div className="blob blob-2" />
         <div className="container-x hero-grid">
           <div>
-            <Reveal><div className="eyebrow">// AI / ML Engineer · Biomedical Researcher</div></Reveal>
-            <Reveal delay={80}>
+            <Reveal>
+              <div className="hero-badge">
+                <span className="badge-dot" /> Open to opportunities
+              </div>
+            </Reveal>
+            <Reveal delay={80}><div className="eyebrow">// AI / ML Engineer · Biomedical Researcher</div></Reveal>
+            <Reveal delay={160}>
               <h1 className="hero-name">
                 WILFRED<br />
                 <span>AS<span className="underline-cyan">U</span>MBOYA</span>
               </h1>
             </Reveal>
-            <Reveal delay={160}>
+            <Reveal delay={240}>
               <p className="hero-subtitle">AI / ML Engineer · Biomedical Engineering · University of Ghana</p>
             </Reveal>
-            <Reveal delay={240}>
+            <Reveal delay={320}>
               <p className="hero-para">
                 I build production-grade AI systems — multi-task deep learning, RAG pipelines,
                 and explainable ML — with a focus on clinical decision support for low-resource
                 healthcare in Africa. Head of AI at INNOGEN. DeepMammo co-author.
               </p>
             </Reveal>
-            <Reveal delay={320}>
+            <Reveal delay={400}>
               <div className="cta-row">
                 <Link to="/projects" className="btn btn-primary">See What I&apos;ve Built →</Link>
                 <Link to="/research" className="btn btn-outline">View Research</Link>
               </div>
             </Reveal>
-            <Reveal delay={400}>
-              <div className="trust-row">
-                PyTorch · TensorFlow · Django · RAG · SHAP · LLM Integration
+            <Reveal delay={480}>
+              <div className="hero-stats">
+                <div className="stat-item"><span className="stat-num">10+</span><span className="stat-label">Projects</span></div>
+                <div className="stat-divider">·</div>
+                <div className="stat-item"><span className="stat-num">2</span><span className="stat-label">Research Papers</span></div>
+                <div className="stat-divider">·</div>
+                <div className="stat-item"><span className="stat-num">3+</span><span className="stat-label">Years</span></div>
               </div>
             </Reveal>
           </div>

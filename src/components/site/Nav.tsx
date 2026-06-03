@@ -13,13 +13,22 @@ const links = [
 
 export function Nav({ dark = false }: { dark?: boolean }) {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => { setOpen(false); }, [pathname]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 60);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
-      <nav className={`nav${dark ? " nav--dark" : ""}`}>
+      <nav className={`nav${dark ? " nav--dark" : ""}${scrolled ? " nav--scrolled" : ""}`}>
         <div className="nav-inner">
           <Link to="/" className="monogram">W<span className="dot">·</span>A</Link>
           <ul className="nav-links">
