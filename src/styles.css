@@ -652,6 +652,40 @@
   box-shadow: var(--shadow-card);
 }
 
+/* ---------- Stats Strip ---------- */
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.stat-card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  border: 1px solid rgba(0, 196, 214, 0.08);
+  box-shadow: var(--shadow-soft);
+}
+.stat-card-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--cyan-deep);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-card-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted-color);
+}
+@media (max-width: 900px) { .stats-strip { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 580px) { .stats-strip { grid-template-columns: 1fr; } }
+
 /* ---------- Featured research cards (home) ---------- */
 .feat-grid {
   display: grid;

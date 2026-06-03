@@ -126,6 +126,30 @@ function Index() {
         </div>
       </section>
 
+      {/* STATS STRIP */}
+      <section className="section" style={{ paddingTop: 0, paddingBottom: 60 }}>
+        <div className="container-x">
+          <div className="stats-strip">
+            <Reveal><div className="stat-card">
+              <span className="stat-card-num">10+</span>
+              <span className="stat-card-label">Projects Shipped</span>
+            </div></Reveal>
+            <Reveal delay={100}><div className="stat-card">
+              <span className="stat-card-num">2</span>
+              <span className="stat-card-label">Research Papers</span>
+            </div></Reveal>
+            <Reveal delay={200}><div className="stat-card">
+              <span className="stat-card-num">3+</span>
+              <span className="stat-card-label">Years Building</span>
+            </div></Reveal>
+            <Reveal delay={300}><div className="stat-card">
+              <span className="stat-card-num">1</span>
+              <span className="stat-card-label">Hospital Deployment</span>
+            </div></Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* FEATURED RESEARCH */}
       <section className="section">
         <div className="container-x">
