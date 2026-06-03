@@ -133,9 +133,19 @@ function Projects() {
             {shown.map((p, i) => (
               <Reveal key={p.title} delay={i * 60}>
                 <article className={`proj-card${p.featured ? " proj-featured" : ""}`}>
-                  <img src={p.img} alt={`${p.title} project screenshot`} loading="lazy" />
+                  <div className="proj-media">
+                    <img src={p.img} alt={`${p.title} project screenshot`} loading="lazy" />
+                    {!p.featured && (
+                      <div className="proj-overlay">
+                        <span className="proj-overlay-tag">{p.tag}</span>
+                      </div>
+                    )}
+                  </div>
                   <div className="proj-body">
-                    <span className="tag">{p.tag}</span>
+                    {p.featured && (
+                      <span className="proj-featured-badge">★ Featured</span>
+                    )}
+                    {!p.featured && <span className="tag">{p.tag}</span>}
                     <h3>{p.title}</h3>
                     <p>{p.desc}</p>
                     <div className="tech-row">
