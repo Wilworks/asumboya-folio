@@ -980,7 +980,7 @@
 /* ---------- Filter bar ---------- */
 .filter-bar {
   position: sticky;
-  top: 70px;
+  top: 100px;
   z-index: 30;
   background: white;
   padding: 18px 0;
