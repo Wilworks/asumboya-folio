@@ -93,6 +93,32 @@
     margin: 0;
   }
 
+  /* ---------- Modern Scrollbar ---------- */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 196, 214, 0.3);
+    border-radius: 6px;
+    border: 2px solid var(--background);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 196, 214, 0.6);
+  }
+
+  /* For Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 196, 214, 0.4) var(--background);
+  }
+
   h1, h2, h3, h4, h5 {
     font-family: var(--font-display);
     color: var(--text);
@@ -1716,5 +1742,380 @@
     animation: none;
     opacity: 1;
     transform: none;
+  }
+}
+
+/* ==========================================================================
+   CV Page Styles (Masterclass Design)
+   ========================================================================== */
+
+.cv-page-wrapper {
+  background-color: var(--background);
+  min-height: 100vh;
+  padding: 120px 24px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cv-actions {
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+
+.cv-container {
+  max-width: 1100px;
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow-strong);
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+/* Sidebar */
+.cv-sidebar {
+  background-color: var(--dark);
+  color: white;
+  padding: 48px 32px;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cv-header {
+  margin-bottom: 48px;
+}
+
+.cv-monogram {
+  width: 64px;
+  height: 64px;
+  background: var(--cyan);
+  color: var(--dark);
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.cv-section {
+  margin-bottom: 40px;
+}
+
+.cv-section:last-child {
+  margin-bottom: 0;
+}
+
+.cv-heading {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  color: var(--cyan);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 196, 214, 0.2);
+  padding-bottom: 8px;
+}
+
+.cv-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.cv-list a {
+  color: var(--cyan);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.cv-list a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.cv-stack-group {
+  margin-bottom: 16px;
+}
+
+.cv-stack-group h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.cv-stack-group p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+.cv-edu-item {
+  margin-bottom: 20px;
+}
+
+.cv-edu-item h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.cv-edu-meta {
+  font-size: 13px;
+  color: var(--cyan);
+  margin-bottom: 6px;
+}
+
+.cv-edu-desc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+.cv-text {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+/* Main Content */
+.cv-main {
+  padding: 48px;
+  background: white;
+  color: var(--dark);
+}
+
+.cv-main-header {
+  margin-bottom: 40px;
+}
+
+.cv-main-header h1 {
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--dark);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.cv-main-header h2 {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--cyan);
+  text-transform: uppercase;
+}
+
+.cv-main-section {
+  margin-bottom: 40px;
+}
+
+.cv-main-heading {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 12px;
+}
+
+.cyan-box {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: var(--cyan);
+}
+
+.cv-body-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #334155;
+}
+
+.cv-job {
+  margin-bottom: 32px;
+}
+
+.cv-job:last-child {
+  margin-bottom: 0;
+}
+
+.cv-job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cv-job-header h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.cv-job-date {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: #64748b;
+}
+
+.cv-job-company {
+  font-size: 14px;
+  font-style: italic;
+  color: #64748b;
+  margin-bottom: 12px;
+}
+
+.cv-job ul,
+.cv-projects-list,
+.cv-bullets {
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+
+.cv-job li,
+.cv-projects-list li,
+.cv-bullets li {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #334155;
+  margin-bottom: 8px;
+  padding-left: 4px;
+}
+
+.cv-job li::marker,
+.cv-projects-list li::marker,
+.cv-bullets li::marker {
+  color: var(--cyan);
+}
+
+.cv-job li:last-child,
+.cv-projects-list li:last-child,
+.cv-bullets li:last-child {
+  margin-bottom: 0;
+}
+
+.cv-projects-list li strong {
+  color: var(--dark);
+  font-weight: 600;
+}
+
+/* Responsive Layout */
+@media (max-width: 900px) {
+  .cv-container {
+    grid-template-columns: 1fr;
+  }
+  .cv-sidebar {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
+@media (max-width: 600px) {
+  .cv-page-wrapper {
+    padding: 100px 16px 40px;
+  }
+  .cv-main, .cv-sidebar {
+    padding: 32px 24px;
+  }
+  .cv-main-header h1 {
+    font-size: 32px;
+  }
+  .cv-job-header {
+    flex-direction: column;
+    gap: 2px;
+  }
+}
+
+/* Print Optimization */
+@media print {
+  @page {
+    margin: 0;
+    size: A4;
+  }
+  
+  body {
+    background: white !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .cv-page-wrapper {
+    padding: 0;
+    margin: 0;
+    min-height: auto;
+    background: white;
+  }
+
+  .cv-container {
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    max-width: 100%;
+    margin: 0;
+    grid-template-columns: 280px 1fr;
+    min-height: 100vh;
+  }
+
+  .cv-sidebar {
+    background-color: #0b1121 !important; /* Force print dark */
+    color: white !important;
+    padding: 40px 24px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cv-main {
+    padding: 40px 32px;
+  }
+
+  /* Force print colors */
+  .cv-monogram {
+    background: #00c4d6 !important;
+    color: #0b1121 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cyan-box {
+    background-color: #00c4d6 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .cv-heading {
+    color: #00c4d6 !important;
+  }
+
+  /* Adjust font sizes slightly for print to fit one/two pages */
+  .cv-body-text, .cv-job li, .cv-projects-list li, .cv-bullets li {
+    font-size: 13.5px;
+  }
+  
+  .cv-main-header h1 {
+    font-size: 36px;
   }
 }
