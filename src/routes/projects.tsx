@@ -13,6 +13,7 @@ import imgGold from "@/assets/project-gold.png";
 import imgDerma from "@/assets/project-dermavision.jpg";
 import imgMammoApi from "@/assets/project-deepmammo-api.jpg";
 import imgWeather from "@/assets/project-weather.jpg";
+import imgBems from "@/assets/project-bems-lite.png";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -32,6 +33,12 @@ type Tag = "Clinical AI" | "Web Apps" | "ML Models" | "Tools";
 const projects: {
   title: string; tag: Tag; desc: string; tech: string[]; img: string; featured?: boolean; link?: string;
 }[] = [
+  {
+    title: "BEMS-Lite", tag: "Web Apps", featured: true,
+    desc: "Offline-first desktop application for hospital biomedical engineering departments. Features full-lifecycle equipment management, PM scheduling, and fault ticketing with background Turso cloud sync. Includes role-based access, Chart.js management dashboards, and automated PDF/Excel reporting. Packaged as a standalone Windows executable.",
+    tech: ["Flask", "SQLite", "Turso libSQL", "Vanilla CSS", "Chart.js"],
+    img: imgBems,
+  },
   {
     title: "DermaVision", tag: "Clinical AI", featured: true,
     desc: "Production Django + DRF inference API wrapping a DINOv2-Base vision model fine-tuned on 31 skin disease classes, exported to ONNX for lightweight CPU deployment. Integrates Groq Llama 3.3 70B for structured dermatology reports and ReportLab-generated PDF handouts. Deployed on Hugging Face Spaces via Docker.",
