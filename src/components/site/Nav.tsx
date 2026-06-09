@@ -43,7 +43,7 @@ export function Nav({ dark = false }: { dark?: boolean }) {
               </li>
             ))}
           </ul>
-          <a className="cv-btn" href="/cv.pdf" download="Wilfred-Asumboya-CV.pdf">Download CV</a>
+          <Link to="/cv" className="cv-btn">View CV</Link>
           <button
             type="button"
             className="hamburger"
