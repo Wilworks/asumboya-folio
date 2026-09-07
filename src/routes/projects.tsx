@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
@@ -175,9 +175,15 @@ function ProjectCard({ p }: { p: Project }) {
           </div>
         )}
         {p.link ? (
-          <a href={p.link} target="_blank" rel="noopener noreferrer" style={{ display: "block", height: "100%" }}>
-            <img src={currentImg} alt={`${p.title} view`} loading="lazy" />
-          </a>
+          p.link.startsWith("/") ? (
+            <Link to={p.link} style={{ display: "block", height: "100%" }}>
+              <img src={currentImg} alt={`${p.title} view`} loading="lazy" />
+            </Link>
+          ) : (
+            <a href={p.link} target="_blank" rel="noopener noreferrer" style={{ display: "block", height: "100%" }}>
+              <img src={currentImg} alt={`${p.title} view`} loading="lazy" />
+            </a>
+          )
         ) : (
           <img src={currentImg} alt={`${p.title} view`} loading="lazy" />
         )}
@@ -194,9 +200,13 @@ function ProjectCard({ p }: { p: Project }) {
         {!p.featured && <span className="tag">{p.tag}</span>}
         <h3>
           {p.link ? (
-            <a href={p.link} target="_blank" rel="noopener noreferrer">
-              {p.title}
-            </a>
+            p.link.startsWith("/") ? (
+              <Link to={p.link}>{p.title}</Link>
+            ) : (
+              <a href={p.link} target="_blank" rel="noopener noreferrer">
+                {p.title}
+              </a>
+            )
           ) : (
             p.title
           )}
@@ -207,14 +217,20 @@ function ProjectCard({ p }: { p: Project }) {
         </div>
         <div style={{ display: "flex", gap: 12, alignItems: "center", marginTop: 16, flexWrap: "wrap" }}>
           {p.link && (
-            <a
-              href={p.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="proj-link"
-            >
-              Interactive Demo on Hugging Face ↗
-            </a>
+            p.link.startsWith("/") ? (
+              <Link to={p.link} className="proj-link">
+                View Coursework Details →
+              </Link>
+            ) : (
+              <a
+                href={p.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="proj-link"
+              >
+                {p.link.includes("huggingface.co") ? "Interactive Demo on Hugging Face ↗" : "View Live Project ↗"}
+              </a>
+            )
           )}
           {p.reportImg && (
             <button
