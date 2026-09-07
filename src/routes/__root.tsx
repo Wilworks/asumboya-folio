@@ -9,6 +9,15 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { CustomCursor } from "@/components/site/CustomCursor";
+import { useTiltMagnetic } from "@/hooks/useTiltMagnetic";
+
+/**
+ * Inline script injected synchronously in <head> before any CSS is parsed.
+ * Reads localStorage / prefers-color-scheme and adds `.dark` to <html>
+ * before the first paint — preventing a flash of the wrong theme.
+ */
+const THEME_SCRIPT = `(function(){try{var s=localStorage.getItem('wa-theme'),p=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(s===null&&p))document.documentElement.classList.add('dark')}catch(e){}})();`;
 
 function NotFoundComponent() {
   return (
@@ -17,9 +26,11 @@ function NotFoundComponent() {
         <h1 style={{ fontSize: "5rem", fontFamily: "var(--font-display)", color: "var(--cyan)" }}>404</h1>
         <h2 style={{ marginTop: 12 }}>Page not found</h2>
         <p style={{ color: "var(--muted-color)", marginTop: 8 }}>
-          The page you're looking for doesn't exist.
+          The page you&apos;re looking for doesn&apos;t exist.
         </p>
-        <Link to="/" className="btn btn-primary" style={{ marginTop: 24, display: "inline-flex" }}>Go home</Link>
+        <Link to="/" className="btn btn-primary" style={{ marginTop: 24, display: "inline-flex" }}>
+          Go home
+        </Link>
       </div>
     </div>
   );
@@ -45,7 +56,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
@@ -72,12 +83,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
-});
+}));
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
+        {/* Theme flash prevention — must be first, before any stylesheet. */}
+        {/* eslint-disable-next-line react/no-danger */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
         <HeadContent />
       </head>
       <body>
@@ -88,10 +102,18 @@ function RootShell({ children }: { children: React.ReactNode }) {
   );
 }
 
+/** Mounts global motion effects (tilt + magnetic) at the app level. */
+function GlobalMotion() {
+  useTiltMagnetic();
+  return null;
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
+      <GlobalMotion />
+      <CustomCursor />
       <Outlet />
     </QueryClientProvider>
   );

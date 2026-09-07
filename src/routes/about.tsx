@@ -2,7 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Reveal, LoadBar } from "@/components/site/Reveal";
-import wilfred from "@/assets/wilfred.png";
+import wilfred from "@/assets/wilfred-lab.jpg";
+import imgOrgan from "@/assets/organist-performance.jpg";
+import imgFootball from "@/assets/football-captain-trophy.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -195,6 +197,39 @@ function About() {
                   <li>Taught mathematics and integrated science</li>
                   <li>Five-year continuous commitment to home community</li>
                 </ul>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* BEYOND ENGINEERING */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container-x">
+          <Reveal><h2 className="section-heading">Beyond Engineering</h2></Reveal>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "24px", marginTop: "24px" }}>
+            <Reveal>
+              <div className="gallery-card has-image">
+                <div className="gallery-media-wrapper">
+                  <img src={imgOrgan} alt="Wilfred performing on organ" loading="lazy" />
+                  <span className="gallery-cat-tag">Music</span>
+                </div>
+                <div className="gallery-caption">
+                  <h3>Pianist &amp; Organist</h3>
+                  <p>Performing sacred and classical keyboard music across university and church events.</p>
+                </div>
+              </div>
+            </Reveal>
+            <Reveal delay={120}>
+              <div className="gallery-card has-image">
+                <div className="gallery-media-wrapper">
+                  <img src={imgFootball} alt="Wilfred as football captain holding trophy" loading="lazy" />
+                  <span className="gallery-cat-tag">Athletics</span>
+                </div>
+                <div className="gallery-caption">
+                  <h3>Football Captain &amp; Champion</h3>
+                  <p>Leading the departmental football team to championship victory on campus.</p>
+                </div>
               </div>
             </Reveal>
           </div>

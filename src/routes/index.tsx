@@ -2,9 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Reveal, LoadBar } from "@/components/site/Reveal";
-import wilfred from "@/assets/wilfred.png";
+import { useCountUp } from "@/hooks/useCountUp";
+import wilfred from "@/assets/wilfred-lab.jpg";
 import researchMulti from "@/assets/research-multilabel.jpg";
-import researchMammo from "@/assets/research-deepmammo.jpg";
+import researchMammo from "@/assets/project-deepmammo-ui.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -12,7 +13,7 @@ export const Route = createFileRoute("/")({
       { title: "Wilfred Asumboya — AI/ML Engineer & Biomedical Researcher" },
       { name: "description", content: "AI/ML engineer and biomedical engineering student building production clinical AI systems — multi-task models, RAG, explainable ML for low-resource healthcare." },
       { property: "og:title", content: "Wilfred Asumboya — AI/ML Engineer & Biomedical Researcher" },
-      { property: "og:description", content: "AI/ML engineer · DeepMammo co-author · Head of AI at INNOGEN." },
+      { property: "og:description", content: "AI/ML engineer · First author & DeepMammo co-author · Head of AI at INNOGEN." },
     ],
     links: [{ rel: "canonical", href: "/" }],
   }),
@@ -31,6 +32,20 @@ const affiliations = [
   "Innovate for Global Health", "Harvard Health Systems Hackathon", "UGAANA",
   "SRC · UG", "GSBE-UG",
 ];
+
+/** Animated stat counter that counts up when scrolled into view. */
+function StatCard({ value, label }: { value: string; label: string }) {
+  const numStr = value.replace(/[^\d]/g, "");
+  const suffix = value.replace(/\d/g, "");
+  const target = parseInt(numStr, 10);
+  const { count, ref } = useCountUp(target);
+  return (
+    <div className="stat-card" ref={ref as React.RefObject<HTMLDivElement>}>
+      <span className="stat-card-num">{count}{suffix}</span>
+      <span className="stat-card-label">{label}</span>
+    </div>
+  );
+}
 
 function Index() {
   return (
@@ -64,13 +79,13 @@ function Index() {
               <p className="hero-para">
                 I build production-grade AI systems — multi-task deep learning, RAG pipelines,
                 and explainable ML — with a focus on clinical decision support for low-resource
-                healthcare in Africa. Head of AI at INNOGEN. DeepMammo co-author.
+                healthcare in Africa. Head of AI at INNOGEN. First author &amp; DeepMammo co-author.
               </p>
             </Reveal>
             <Reveal delay={400}>
               <div className="cta-row">
-                <Link to="/projects" className="btn btn-primary">See What I&apos;ve Built →</Link>
-                <Link to="/research" className="btn btn-outline">View Research</Link>
+                <Link to="/projects" className="btn btn-primary" data-magnetic>See What I&apos;ve Built →</Link>
+                <Link to="/research" className="btn btn-outline" data-magnetic>View Research</Link>
               </div>
             </Reveal>
             <Reveal delay={480}>
@@ -96,8 +111,8 @@ function Index() {
                   University of Ghana · Level 300
                 </div>
                 <div className="float-card float-card--alt bottom-right">
-                  <span className="label">Preprint</span>
-                  Co-author · DeepMammo 2026
+                  <span className="label">Preprints / Research</span>
+                  First Author &amp; Co-author · 2026
                 </div>
               </div>
             </div>
@@ -130,22 +145,10 @@ function Index() {
       <section className="section" style={{ paddingTop: 0, paddingBottom: 60 }}>
         <div className="container-x">
           <div className="stats-strip">
-            <Reveal><div className="stat-card">
-              <span className="stat-card-num">10+</span>
-              <span className="stat-card-label">Projects Shipped</span>
-            </div></Reveal>
-            <Reveal delay={100}><div className="stat-card">
-              <span className="stat-card-num">2</span>
-              <span className="stat-card-label">Research Papers</span>
-            </div></Reveal>
-            <Reveal delay={200}><div className="stat-card">
-              <span className="stat-card-num">3+</span>
-              <span className="stat-card-label">Years Building</span>
-            </div></Reveal>
-            <Reveal delay={300}><div className="stat-card">
-              <span className="stat-card-num">1st</span>
-              <span className="stat-card-label">Class Honours</span>
-            </div></Reveal>
+            <Reveal><StatCard value="10+" label="Projects Shipped" /></Reveal>
+            <Reveal delay={100}><StatCard value="2" label="Research Papers" /></Reveal>
+            <Reveal delay={200}><StatCard value="3+" label="Years Building" /></Reveal>
+            <Reveal delay={300}><StatCard value="1st" label="Class Honours" /></Reveal>
           </div>
         </div>
       </section>
@@ -157,7 +160,7 @@ function Index() {
           <Reveal><p className="section-sub">Two active threads — one a controlled architectural study, one a peer-reviewed preprint.</p></Reveal>
           <div className="feat-grid">
             <Reveal>
-              <article className="feat-card">
+              <article className="feat-card" data-tilt>
                 <span className="pill pill-cyan">Ongoing</span>
                 <h3>Multi-Label Disease Complication Prediction</h3>
                 <p>A controlled experiment comparing six output-layer interaction mechanisms for joint clinical prediction across diabetes and myocardial infarction cohorts.</p>
@@ -166,7 +169,7 @@ function Index() {
               </article>
             </Reveal>
             <Reveal delay={120}>
-              <article className="feat-card">
+              <article className="feat-card" data-tilt>
                 <span className="pill pill-dark">Preprint · Mar 2026</span>
                 <h3>DeepMammo: Multi-Task Mammography AI</h3>
                 <p>Co-authored preprint proposing a unified multi-task framework for simultaneous lesion segmentation, classification, and pathology prediction.</p>

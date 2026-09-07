@@ -3,6 +3,9 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Reveal, LoadBar } from "@/components/site/Reveal";
 import nsmqImg from "@/assets/nsmq-illustration.jpg";
+import imgAiPanel from "@/assets/ai-panel-discussion.jpg";
+import imgProfKaufmann from "@/assets/prof-kaufmann-smock.jpg";
+import imgOpSmile from "@/assets/operation-smile-frame.jpg";
 
 export const Route = createFileRoute("/leadership")({
   head: () => ({
@@ -93,6 +96,53 @@ function Leadership() {
                 </div>
               </Reveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* LEADERSHIP IN ACTION */}
+      <section className="section">
+        <div className="container-x">
+          <Reveal><h2 className="section-heading">Leadership &amp; Global Health Initiatives</h2></Reveal>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "24px", marginTop: "24px" }}>
+            <Reveal>
+              <div className="gallery-card has-image">
+                <div className="gallery-media-wrapper">
+                  <img src={imgAiPanel} alt="Wilfred on AI panel discussion at WACCIP" loading="lazy" />
+                  <span className="gallery-cat-tag">Pan-African AI Panel</span>
+                </div>
+                <div className="gallery-caption">
+                  <h3>Digital Ubuntu AI &amp; Cybersecurity Panel</h3>
+                  <p>Panelist at the WACCIP workshop with Nelson Mandela University delegation speaking on AI policy &amp; opportunities in Africa.</p>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={100}>
+              <div className="gallery-card has-image">
+                <div className="gallery-media-wrapper">
+                  <img src={imgProfKaufmann} alt="Wilfred with Prof. Elsie Effah Kaufmann" loading="lazy" />
+                  <span className="gallery-cat-tag">Academic Leadership</span>
+                </div>
+                <div className="gallery-caption">
+                  <h3>Faculty &amp; Student Guidance</h3>
+                  <p>Working closely with ING. Prof. Elsie Effah Kaufmann on departmental initiatives and research mentorship.</p>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={200}>
+              <div className="gallery-card has-image">
+                <div className="gallery-media-wrapper">
+                  <img src={imgOpSmile} alt="Wilfred Operation Smile photo frame" loading="lazy" />
+                  <span className="gallery-cat-tag">Operation Smile Mission</span>
+                </div>
+                <div className="gallery-caption">
+                  <h3>Cleft Surgery Volunteer Mission</h3>
+                  <p>Supporting medical teams and patient care during Operation Smile Ghana mission in Cape Coast.</p>
+                </div>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>

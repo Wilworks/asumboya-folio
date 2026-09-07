@@ -14,6 +14,8 @@ import { Route as ResearchRouteImport } from './routes/research'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as LeadershipRouteImport } from './routes/leadership'
 import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as CvRouteImport } from './routes/cv'
+import { Route as CourseworkRouteImport } from './routes/coursework'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -43,6 +45,16 @@ const GalleryRoute = GalleryRouteImport.update({
   path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CvRoute = CvRouteImport.update({
+  id: '/cv',
+  path: '/cv',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CourseworkRoute = CourseworkRouteImport.update({
+  id: '/coursework',
+  path: '/coursework',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -63,6 +75,8 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/coursework': typeof CourseworkRoute
+  '/cv': typeof CvRoute
   '/gallery': typeof GalleryRoute
   '/leadership': typeof LeadershipRoute
   '/projects': typeof ProjectsRoute
@@ -73,6 +87,8 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/coursework': typeof CourseworkRoute
+  '/cv': typeof CvRoute
   '/gallery': typeof GalleryRoute
   '/leadership': typeof LeadershipRoute
   '/projects': typeof ProjectsRoute
@@ -84,6 +100,8 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/coursework': typeof CourseworkRoute
+  '/cv': typeof CvRoute
   '/gallery': typeof GalleryRoute
   '/leadership': typeof LeadershipRoute
   '/projects': typeof ProjectsRoute
@@ -96,6 +114,8 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/coursework'
+    | '/cv'
     | '/gallery'
     | '/leadership'
     | '/projects'
@@ -106,6 +126,8 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/coursework'
+    | '/cv'
     | '/gallery'
     | '/leadership'
     | '/projects'
@@ -116,6 +138,8 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/coursework'
+    | '/cv'
     | '/gallery'
     | '/leadership'
     | '/projects'
@@ -127,6 +151,8 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  CourseworkRoute: typeof CourseworkRoute
+  CvRoute: typeof CvRoute
   GalleryRoute: typeof GalleryRoute
   LeadershipRoute: typeof LeadershipRoute
   ProjectsRoute: typeof ProjectsRoute
@@ -171,6 +197,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cv': {
+      id: '/cv'
+      path: '/cv'
+      fullPath: '/cv'
+      preLoaderRoute: typeof CvRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coursework': {
+      id: '/coursework'
+      path: '/coursework'
+      fullPath: '/coursework'
+      preLoaderRoute: typeof CourseworkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -199,6 +239,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  CourseworkRoute: CourseworkRoute,
+  CvRoute: CvRoute,
   GalleryRoute: GalleryRoute,
   LeadershipRoute: LeadershipRoute,
   ProjectsRoute: ProjectsRoute,

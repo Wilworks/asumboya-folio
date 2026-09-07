@@ -3,12 +3,12 @@ import { useState } from "react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Reveal, LoadBar } from "@/components/site/Reveal";
-import imgMulti from "@/assets/research-multilabel.jpg";
-import imgMammo from "@/assets/research-deepmammo.jpg";
+import imgMulti from "@/assets/code-debugging-perfect.jpg";
+import imgMammo from "@/assets/project-deepmammo-ui.png";
 import imgAirway from "@/assets/research-airway.jpg";
 import imgShap from "@/assets/research-shap.jpg";
 import imgNaa from "@/assets/research-naa.jpg";
-import imgFourier from "@/assets/research-fourier.jpg";
+import imgFourier from "@/assets/fourier-arduino-setup.jpg";
 
 export const Route = createFileRoute("/research")({
   head: () => ({
@@ -30,11 +30,11 @@ const projects: {
   meta: string; desc: string; key: string; img: string;
 }[] = [
   {
-    status: "Ongoing", pillClass: "pill-cyan",
+    status: "Preprint", pillClass: "pill-dark",
     title: "Multi-Label Disease Complication Prediction",
-    supervisor: "Supervisor: Dr. Cletus Fiifi Adams",
-    meta: "Type 2 Diabetes · Myocardial Infarction · 5 data fractions · 7 seeds",
-    desc: "Designed a controlled experiment comparing six output-layer interaction mechanisms (symmetric CRF, multiplicative gating, bilinear attention, rank-one factorised, residual MLP) for multi-label clinical prediction. Evaluated across five data fractions and seven random seeds. Introduced a reverse inference framework treating the winning mechanism's identity as a biological instrument for characterising disease co-occurrence structure.",
+    supervisor: "First Author / Lead Researcher · Supervisor: Dr. Cletus Fiifi Adams",
+    meta: "bioRxiv Preprint under review · Type 2 Diabetes · Myocardial Infarction · 350 runs",
+    desc: "First-authored bioRxiv study designing a controlled experiment comparing six output-layer interaction mechanisms (symmetric CRF, multiplicative gating, bilinear attention, rank-one factorised, residual MLP) for multi-label clinical prediction. Evaluated across five data fractions and seven random seeds. Introduced a reverse inference framework treating the winning mechanism's identity as a biological instrument for characterising disease co-occurrence structure.",
     key: "Consistently negative CRF interaction parameter — evidence that shared biological signal is already captured in backbone features.",
     img: imgMulti,
   },
