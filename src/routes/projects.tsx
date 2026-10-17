@@ -3,20 +3,16 @@ import { useState } from "react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Reveal, LoadBar } from "@/components/site/Reveal";
-import imgNexus from "@/assets/project-nexus.png";
-import imgNstp from "@/assets/project-nstp.png";
-import imgMind from "@/assets/project-mindmesh.png";
-import imgEqui from "@/assets/project-equibase.png";
-import imgSglt from "@/assets/project-sglt2.png";
-import imgVoice from "@/assets/project-voice.png";
-import imgGold from "@/assets/project-gold.png";
+
+// Real Screenshots & Diagnostic UI Artifacts
+import imgBems from "@/assets/project-bems-lite.png";
 import imgDermaUi from "@/assets/project-dermadetect-ui.png";
 import imgDermaReport from "@/assets/project-dermadetect-report.png";
 import imgMammoUi from "@/assets/project-deepmammo-ui.png";
 import imgMammoReport from "@/assets/project-deepmammo-report.png";
-import imgWeather from "@/assets/project-weather.jpg";
-import imgBems from "@/assets/project-bems-lite.png";
-import imgLora from "@/assets/project-llama-lora.jpg";
+
+// Real Field Test & Engineering CAD Models
+import imgFieldTest from "@/assets/field-test-dr-cletus.jpg";
 import imgElectrode from "@/assets/coursework-electrode-cad.jpg";
 import imgNeovita from "@/assets/neovita-ghana-incubator.jpg";
 import imgOrthosis from "@/assets/mechanical-systems-cad-model.jpg";
@@ -41,95 +37,41 @@ interface Project {
   tag: Tag;
   desc: string;
   tech: string[];
-  img: string;
+  img?: string;
   reportImg?: string;
   featured?: boolean;
   link?: string;
 }
 
-const projects: Project[] = [
+// ── Flagship Engineered Systems & Clinical AI (Backed by Real Artifacts & Screenshots) ──
+const flagshipProjects: Project[] = [
   {
-    title: "BEMS-Lite", tag: "Web Apps", featured: true,
+    title: "BEMS-Lite: Biomedical Equipment Management System", tag: "Web Apps", featured: true,
     desc: "Offline-first desktop application for hospital biomedical engineering departments. Features full-lifecycle equipment management, PM scheduling, and fault ticketing with background Turso cloud sync. Includes role-based access, Chart.js management dashboards, and automated PDF/Excel reporting. Packaged as a standalone Windows executable.",
     tech: ["Flask", "SQLite", "Turso libSQL", "Vanilla CSS", "Chart.js"],
     img: imgBems,
   },
   {
-    title: "DermaVision / DermaDetect", tag: "Clinical AI", featured: true,
-    desc: "Production Django + DRF inference API wrapping a DINOv2-Base vision model fine-tuned on 31 skin disease classes, exported to ONNX for lightweight CPU deployment. Integrates Groq Llama 3.3 70B for structured dermatology reports and ReportLab-generated PDF handouts. Deployed on Hugging Face Spaces via Docker.",
+    title: "DermaVision / DermaDetect Clinical Diagnostics", tag: "Clinical AI", featured: true,
+    desc: "Production Django + DRF inference API wrapping a DINOv2-Base vision model fine-tuned on 31 skin disease classes, exported to ONNX for lightweight CPU deployment. Integrates Groq Llama 3.3 70B for structured dermatology reports and ReportLab-generated PDF clinical referrals. Deployed on Hugging Face Spaces via Docker.",
     tech: ["Django", "DRF", "DINOv2", "ONNX Runtime", "GradCAM", "Groq LLM", "Docker"],
     img: imgDermaUi,
     reportImg: imgDermaReport,
     link: "https://huggingface.co/spaces/WilfredAyine/DermaDetect",
   },
   {
-    title: "DeepMammo Inference API", tag: "Clinical AI", featured: true,
-    desc: "Full-stack clinical AI inference system wrapping the DeepMammo mammography model as a production REST API. Returns abnormality type, pathology prediction, segmentation mask, GradCAM saliency, structured clinical report, and PDF — from a single POST request. ONNX export cut Docker image size by ~800MB.",
+    title: "DeepMammo Multi-Task Inference API & PDF Engine", tag: "Clinical AI", featured: true,
+    desc: "Full-stack clinical AI inference system wrapping the DeepMammo mammography model as a production REST API. Returns abnormality type, pathology prediction, segmentation mask, GradCAM saliency, structured clinical report, and automated PDF — from a single POST request. ONNX export cut Docker image size by ~800MB.",
     tech: ["PyTorch", "ONNX", "Django", "DRF", "Groq LLM", "ReportLab", "Docker", "HF Spaces"],
     img: imgMammoUi,
     reportImg: imgMammoReport,
     link: "https://huggingface.co/spaces/WilfredAyine/deepmammo",
   },
   {
-    title: "Nexus Intellisense", tag: "Clinical AI",
-    desc: "Django-based multi-task disease prediction system for low-resource healthcare. Implements SHAP-based explainability and RAG-powered clinical recommendations. End-to-end from data ingestion to a clinician-facing interface with real-time inference.",
-    tech: ["Django", "PyTorch", "SHAP", "RAG", "PostgreSQL", "REST API"],
-    img: imgNexus,
-  },
-  {
-    title: "NSTP Chatbot", tag: "Clinical AI",
-    desc: "Django chatbot applying CBT principles to identify and challenge negative self-talk. Integrates local (Ollama) and cloud (Perplexity) LLMs with cognitive distortion detection via RAG.",
-    tech: ["Django", "Ollama", "Perplexity API", "RAG"],
-    img: imgNstp,
-  },
-  {
-    title: "MindMesh", tag: "Web Apps",
-    desc: "AI study platform with flashcards, quizzes, RAG-based research summaries, and gamified engagement. Built with user feedback iteration loops.",
-    tech: ["Django", "RAG", "LLM", "JavaScript"],
-    img: imgMind,
-  },
-  {
-    title: "EquiBase", tag: "Web Apps",
-    desc: "Django system with real-time dashboards, automated validation, and lifecycle tracking for medical equipment. Deployed at Komfo Anokye Teaching Hospital.",
-    tech: ["Django", "JavaScript", "PostgreSQL", "REST API"],
-    img: imgEqui,
-  },
-  {
-    title: "Llama Fine-Tuning Pipeline (LoRA)", tag: "ML Models",
-    desc: "Modular, configuration-driven pipeline for parameter-efficient fine-tuning of LLMs (LLaMA, TinyLlama) using Low-Rank Adaptation. Features architecture-aware attention-module selection, activation/gradient checkpointing, dynamic device mapping, and FP16/FP32 mixed precision to minimise GPU VRAM. PyYAML-driven hyperparameters for reproducibility.",
-    tech: ["Python", "PyTorch", "LoRA", "Hugging Face", "YAML"],
-    img: imgLora,
-  },
-  {
-    title: "Voice-Based Medical Triage Assistant", tag: "Clinical AI",
-    desc: "Voice interface for symptom intake in Twi and English. Uses speech recognition, Whisper transcription, and structured NLU classification for rural triage.",
-    tech: ["Python", "Whisper", "SpeechRecognition", "FastAPI"],
-    img: imgVoice,
-  },
-  {
-    title: "SGLT2i Clinical Decision Support System", tag: "Clinical AI",
-    desc: "Evidence-based decision support algorithm for initiating SGLT2 inhibitors in T2D patients with renal/cardiovascular risk. Built from KDIGO guidelines.",
-    tech: ["Python", "Streamlit", "Clinical Rules"],
-    img: imgSglt,
-  },
-  {
-    title: "Artisanal Gold Assay Prediction Pipeline", tag: "ML Models",
-    desc: "Machine learning pipeline predicting gold yield from geological and spectral data to optimize non-destructive field assay workflows.",
-    tech: ["Python", "scikit-learn", "XGBoost", "Pandas"],
-    img: imgGold,
-  },
-  {
-    title: "Weather Station Telemetry & Dashboard", tag: "Tools",
-    desc: "IoT telemetry collector and web dashboard monitoring environmental sensors with real-time alerting and historical trend plots.",
-    tech: ["Python", "Flask", "SQLite", "Chart.js"],
-    img: imgWeather,
-  },
-  {
-    title: "Sweat-Tolerant Skin Bioelectrode System", tag: "Engineering Design",
-    desc: "BMEN 306 design project. Engineered a multi-layer bioelectrode combining a directional Janus wicking membrane, breathable perforated acrylic adhesive, and Ag/AgCl hydrogel to maintain low contact impedance under tropical heat and humidity.",
-    tech: ["Biomaterials", "Janus Membrane", "Signal Acquisition", "SolidWorks"],
-    img: imgElectrode,
-    link: "/coursework",
+    title: "Edge Computer Vision 3D Depth Gate & Livestock Counter", tag: "Engineering Design", featured: true,
+    desc: "Field-tested real-time edge computer vision pipeline for agricultural throughput monitoring with Dr. Cletus Fiifi Adams. Features frontal depth estimation, 3D gate boundary filtering (Z=3.0m cut-off), automated human suppression (0.88 threshold), and multi-target trajectory tracking running at ~10 FPS under ambient dust and variable lighting conditions.",
+    tech: ["OpenCV", "PyTorch", "Depth Estimation", "Edge AI", "Python", "Embedded Systems"],
+    img: imgFieldTest,
   },
   {
     title: "NeoVita Ghana — Neonatal Monitor Mechanical Enclosure", tag: "Engineering Design",
@@ -145,9 +87,18 @@ const projects: Project[] = [
     img: imgOrthosis,
     link: "/coursework",
   },
+  {
+    title: "Sweat-Tolerant Skin Bioelectrode System", tag: "Engineering Design",
+    desc: "BMEN 306 design project. Engineered a multi-layer bioelectrode combining a directional Janus wicking membrane, breathable perforated acrylic adhesive, and Ag/AgCl hydrogel to maintain low contact impedance under tropical heat and humidity.",
+    tech: ["Biomaterials", "Janus Membrane", "Signal Acquisition", "SolidWorks"],
+    img: imgElectrode,
+    link: "/coursework",
+  },
 ];
 
-const filters = ["All", "Clinical AI", "Engineering Design", "Web Apps", "ML Models", "Tools"] as const;
+const projects = flagshipProjects;
+
+const filters = ["All", "Clinical AI", "Engineering Design", "Web Apps"] as const;
 
 function ProjectCard({ p }: { p: Project }) {
   const [activeTab, setActiveTab] = useState<"ui" | "report">("ui");

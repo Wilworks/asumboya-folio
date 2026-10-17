@@ -17,7 +17,7 @@ import { useTiltMagnetic } from "@/hooks/useTiltMagnetic";
  * Reads localStorage / prefers-color-scheme and adds `.dark` to <html>
  * before the first paint — preventing a flash of the wrong theme.
  */
-const THEME_SCRIPT = `(function(){try{var s=localStorage.getItem('wa-theme'),p=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(s===null&&p))document.documentElement.classList.add('dark')}catch(e){}})();`;
+const THEME_SCRIPT = `(function(){try{var s=localStorage.getItem('wa-theme');if(s==='light'){document.documentElement.classList.remove('dark')}else{document.documentElement.classList.add('dark')}}catch(e){document.documentElement.classList.add('dark')}})();`;
 
 function NotFoundComponent() {
   return (
@@ -87,7 +87,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         {/* Theme flash prevention — must be first, before any stylesheet. */}
         {/* eslint-disable-next-line react/no-danger */}

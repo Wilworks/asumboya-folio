@@ -143,6 +143,61 @@ const courseProjects: CourseProject[] = [
   },
 ];
 
+interface CurriculumDomain {
+  domain: string;
+  badge: string;
+  desc: string;
+  courses: { code: string; title: string; focus: string }[];
+}
+
+const curriculumDomains: CurriculumDomain[] = [
+  {
+    domain: "Medical Instrumentation & Sensors",
+    badge: "Hardware & Transducers",
+    desc: "Diagnostic circuit design, sensor-tissue interfaces, bioelectric signal acquisition, and electrical safety standards.",
+    courses: [
+      { code: "BMEN 306", title: "Medical Instrumentation Design", focus: "Electrode-skin impedance, biopotential amplifiers, ECG/EMG analog frontends" },
+      { code: "BMEN 322", title: "Medical Device Design & Manufacturing", focus: "Clinical needs assessment, Pugh selection, ISO/IEC safety, IP54 packaging" },
+      { code: "BMEN 303", title: "Bioinstrumentation", focus: "Sensor physics, operational amplifiers, bridge circuits, calibration & noise" },
+      { code: "BMEN 324", title: "Biomedical Engineering Systems", focus: "System dynamics, closed-loop physiological control, feedback stability" },
+    ],
+  },
+  {
+    domain: "Biomechanics, Rehab & Biomaterials",
+    badge: "Mechanics & Materials",
+    desc: "Constitutive biomaterial behavior, musculoskeletal kinematics, orthotic design, and tissue biocompatibility.",
+    courses: [
+      { code: "BMEN 308", title: "Rehabilitation Engineering & Biomechanics", focus: "Kinematic joint analysis, Bowden cable actuation, assistive orthotics" },
+      { code: "BMEN 305", title: "Biomaterials", focus: "Ashby selection, surface energy, polymer degradation, host immune response" },
+      { code: "BMEN 307", title: "Biomechanics", focus: "Stress-strain tensors, bone fracture mechanics, musculoskeletal loading" },
+      { code: "BMEN 318", title: "Tissue Engineering", focus: "Cellular scaffolds, extracellular matrix mimicking, bioactive hydrogels" },
+    ],
+  },
+  {
+    domain: "Applied Mathematics & Computational Engineering",
+    badge: "Algorithms & Analysis",
+    desc: "Rigorous linear algebra, ordinary/partial differential equations, numerical optimization, and scientific programming.",
+    courses: [
+      { code: "BMEN 208", title: "Medical Imaging", focus: "Radon transform, CT reconstruction, MRI k-space physics, ultrasound acoustics" },
+      { code: "SENG 201", title: "Linear Algebra", focus: "Vector spaces, eigen-decomposition, SVD, matrix transformations for ML" },
+      { code: "SENG 202", title: "Differential Equations", focus: "ODEs/PDEs, dynamical state space, harmonic oscillators, Laplace transforms" },
+      { code: "SENG 207", title: "Programming for Engineers", focus: "Object-oriented software design, data structures, algorithm complexity" },
+      { code: "SENG 301", title: "Numerical Methods", focus: "Root finding, Runge-Kutta ODE solvers, finite difference methods, FEA" },
+    ],
+  },
+  {
+    domain: "Physiological Transport & Molecular Systems",
+    badge: "Biology & Transport",
+    desc: "Thermodynamics of membranes, fluid dynamics in vasculature, respiratory gas exchange, and cell biology.",
+    courses: [
+      { code: "BMEN 214", title: "Transport Processes in Living Systems", focus: "Fick's laws of diffusion, Navier-Stokes vascular flow, oxygen mass transfer" },
+      { code: "BMEN 212", title: "Principles of Physiology & Anatomy", focus: "Cardiovascular, pulmonary, renal, and neuromuscular systemic regulation" },
+      { code: "BMEN 205", title: "Anatomy & Physiology", focus: "Organ system architecture, anatomical histology, neural conduction pathways" },
+      { code: "BMEN 311", title: "Cell, Molecular Biology & Biotech", focus: "Recombinant DNA, PCR, protein synthesis, cellular signal transduction" },
+    ],
+  },
+];
+
 function Coursework() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const selectedProj = courseProjects.find((p) => p.id === selectedId);
@@ -158,13 +213,95 @@ function Coursework() {
           </span>
           <h1>Coursework &amp; Engineering Design</h1>
           <p className="sub">
-            Rigorous engineering design projects — from clinical needs assessment and morphological charts to CAD modeling, FEA simulation, and prototype fabrication.
+            Rigorous engineering design projects and foundational coursework — from clinical needs assessment and morphological charts to CAD modeling, FEA simulation, and physical prototypes.
           </p>
         </div>
       </header>
 
-      <section className="section">
+      {/* ACADEMIC STANDING STRIP */}
+      <section className="section" style={{ paddingTop: 0, paddingBottom: 40 }}>
         <div className="container-x">
+          <Reveal>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+                gap: "20px",
+                padding: "28px",
+                background: "var(--card-bg, #0b192c)",
+                borderRadius: "16px",
+                border: "1px solid var(--border)",
+              }}
+            >
+              <div>
+                <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem", color: "var(--cyan)", textTransform: "uppercase", letterSpacing: "0.1em" }}>
+                  Academic Standing
+                </div>
+                <div style={{ fontSize: "1.8rem", fontWeight: 700, color: "var(--text)", marginTop: 4 }}>
+                  First Class
+                </div>
+                <div style={{ fontSize: "0.85rem", color: "var(--text-muted)", marginTop: 2 }}>
+                  Honours with Distinction
+                </div>
+              </div>
+
+              <div>
+                <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem", color: "var(--cyan)", textTransform: "uppercase", letterSpacing: "0.1em" }}>
+                  Dean&apos;s Honour List
+                </div>
+                <div style={{ fontSize: "1.8rem", fontWeight: 700, color: "var(--text)", marginTop: 4 }}>
+                  Levels 100–300
+                </div>
+                <div style={{ fontSize: "0.85rem", color: "var(--text-muted)", marginTop: 2 }}>
+                  Top Academic Rank (2024–2026)
+                </div>
+              </div>
+
+              <div>
+                <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem", color: "var(--cyan)", textTransform: "uppercase", letterSpacing: "0.1em" }}>
+                  Scholarship
+                </div>
+                <div style={{ fontSize: "1.8rem", fontWeight: 700, color: "var(--text)", marginTop: 4 }}>
+                  UGAANA Scholar
+                </div>
+                <div style={{ fontSize: "0.85rem", color: "var(--text-muted)", marginTop: 2 }}>
+                  UG Alumni Association of North America
+                </div>
+              </div>
+
+              <div>
+                <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem", color: "var(--cyan)", textTransform: "uppercase", letterSpacing: "0.1em" }}>
+                  Pre-University Standing
+                </div>
+                <div style={{ fontSize: "1.8rem", fontWeight: 700, color: "var(--text)", marginTop: 4 }}>
+                  Aggregate 7
+                </div>
+                <div style={{ fontSize: "0.85rem", color: "var(--text-muted)", marginTop: 2 }}>
+                  WASSCE 2023 · NSMQ Regional Champion
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* FLAGSHIP HARDWARE & DESIGN PROJECTS */}
+      <section className="section" style={{ paddingTop: 20 }}>
+        <div className="container-x">
+          <Reveal>
+            <div style={{ marginBottom: 40 }}>
+              <span className="tag" style={{ marginBottom: 8, display: "inline-block" }}>
+                Hands-on Engineering
+              </span>
+              <h2 className="section-heading" style={{ margin: "4px 0 12px" }}>
+                Featured Engineering Design Capstones
+              </h2>
+              <p className="section-sub" style={{ margin: 0 }}>
+                Translating clinical requirements into physical devices through systematic engineering design methodology.
+              </p>
+            </div>
+          </Reveal>
+
           <div style={{ display: "flex", flexDirection: "column", gap: 60 }}>
             {courseProjects.map((p, idx) => (
               <Reveal key={p.id} delay={idx * 100}>
@@ -224,6 +361,98 @@ function Coursework() {
                     </div>
                   </div>
                 </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CURRICULUM ARCHITECTURE */}
+      <section className="section" style={{ background: "var(--cyan-tint)", paddingTop: 70, paddingBottom: 70 }}>
+        <div className="container-x">
+          <Reveal>
+            <div style={{ marginBottom: 36 }}>
+              <span className="tag" style={{ marginBottom: 8, display: "inline-block" }}>
+                Academic Curriculum
+              </span>
+              <h2 className="section-heading" style={{ margin: "4px 0 12px" }}>
+                Core Coursework &amp; Technical Foundation
+              </h2>
+              <p className="section-sub" style={{ margin: 0 }}>
+                Rigorous training in biomedical systems, mathematics, transport phenomena, and biomechanics at the School of Engineering Sciences, University of Ghana.
+              </p>
+            </div>
+          </Reveal>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gap: "28px",
+            }}
+          >
+            {curriculumDomains.map((domain, i) => (
+              <Reveal key={domain.domain} delay={i * 80}>
+                <div
+                  style={{
+                    background: "var(--card-bg, #0b192c)",
+                    borderRadius: "14px",
+                    border: "1px solid var(--border)",
+                    padding: "24px",
+                    display: "flex",
+                    flexDirection: "column",
+                    height: "100%",
+                  }}
+                >
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
+                    <h3 style={{ fontSize: "1.15rem", fontWeight: 700, margin: 0, color: "var(--text)" }}>
+                      {domain.domain}
+                    </h3>
+                    <span
+                      style={{
+                        fontFamily: "var(--font-mono)",
+                        fontSize: "0.68rem",
+                        padding: "3px 8px",
+                        borderRadius: "6px",
+                        background: "rgba(0, 229, 255, 0.12)",
+                        color: "var(--cyan)",
+                        whiteSpace: "nowrap",
+                        marginLeft: 8,
+                      }}
+                    >
+                      {domain.badge}
+                    </span>
+                  </div>
+                  <p style={{ fontSize: "0.85rem", color: "var(--text-muted)", marginBottom: 18, lineHeight: 1.5 }}>
+                    {domain.desc}
+                  </p>
+
+                  <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginTop: "auto" }}>
+                    {domain.courses.map((c) => (
+                      <div
+                        key={c.code}
+                        style={{
+                          padding: "10px 12px",
+                          borderRadius: "8px",
+                          background: "var(--card-subtle, rgba(255, 255, 255, 0.03))",
+                          border: "1px solid var(--border)",
+                        }}
+                      >
+                        <div style={{ display: "flex", alignItems: "baseline", gap: "8px", marginBottom: 2 }}>
+                          <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.72rem", color: "var(--cyan)", fontWeight: 600 }}>
+                            {c.code}
+                          </span>
+                          <span style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--text)" }}>
+                            {c.title}
+                          </span>
+                        </div>
+                        <div style={{ fontSize: "0.75rem", color: "var(--text-muted)", lineHeight: 1.4 }}>
+                          {c.focus}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </Reveal>
             ))}
           </div>

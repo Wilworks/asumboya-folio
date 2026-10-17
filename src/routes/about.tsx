@@ -21,11 +21,13 @@ export const Route = createFileRoute("/about")({
 
 const mentors = [
   { name: "Dr. Cletus Fiifi Adams", inst: "University of Ghana", desc: "Primary research supervisor across multi-label prediction, DeepMammo, and airway segmentation work." },
-  { name: "Prof. Elvis Tiburu Kwason", inst: "University of Ghana", desc: "Supervisor on the Fort Amsterdam Neutron Activation Analysis project and ongoing scientific correspondence." },
-  { name: "Prof. Elsie Effah Kaufmann", inst: "University of Ghana", desc: "Mentor on the Fourier Ptychography microscopy project. Featured Wilfred in the NSMQ Superstar Spotlight." },
-  { name: "Prof. Samuel Kojo Kwofie", inst: "University of Ghana", desc: "Research Assistant supervisor at IAST on medical imaging and digital mental health AI." },
-  { name: "Prof. Kwabena Kan-Dapaah", inst: "University of Ghana", desc: "Co-supervisor on the explainable multi-task diabetes complications framework." },
   { name: "Prof. Rama Ramakrishnan", inst: "MIT Sloan School of Management", desc: "Active research correspondence on applied machine learning, decision systems, and translating models into real-world deployment." },
+  { name: "Prof. Elsie Effah Kaufmann", inst: "University of Ghana", desc: "Mentor on the Fourier Ptychography microscopy project. Featured Wilfred in the NSMQ Superstar Spotlight." },
+  { name: "Prof. Kimani Toussaint", inst: "Brown University", desc: "Optica Amplify mentor on quantitative phase imaging, computational microscopy, and experimental physical validation checks." },
+  { name: "Prof. Hong Hua", inst: "University of Arizona", desc: "Optica Amplify advisor on optical system design, computational imaging tradeoffs, and optical engineering methodology." },
+  { name: "Prof. Samuel Kojo Kwofie", inst: "University of Ghana", desc: "Research Assistant supervisor at IAST on medical imaging and digital mental health AI." },
+  { name: "Prof. Elvis Tiburu Kwason", inst: "University of Ghana", desc: "Supervisor on the Fort Amsterdam Neutron Activation Analysis project and ongoing scientific correspondence." },
+  { name: "Prof. Kwabena Kan-Dapaah", inst: "University of Ghana", desc: "Co-supervisor on the explainable multi-task diabetes complications framework." },
 ];
 
 const courses = [
@@ -49,6 +51,7 @@ const courses = [
 const awards = [
   ["Dean's Honour List", "University of Ghana", "L100 – L300"],
   ["UGAANA Scholarship", "University of Ghana Alumni", "Ongoing"],
+  ["Optica Amplify Optics Immersion — Best Presentation Award (Group 2)", "Optica Foundation", "Sep 2026"],
   ["Harvard Health Systems Hackathon — Participant", "Harvard University", "2025"],
   ["NSMQ Upper East Regional Winner", "Notre Dame Seminary SHS", "2022"],
   ["NSMQ National 1/8 Finalist", "National Science & Maths Quiz", "2022"],
@@ -114,10 +117,10 @@ function About() {
                 <h3>University of Ghana</h3>
                 <div className="meta">BSc. Biomedical Engineering · Level 300</div>
                 <ul>
-                  <li>Expected January 2028</li>
+                  <li>Expected 2027</li>
                   <li>First Class Honours (Distinction)</li>
-                  <li>UGAANA Scholar</li>
                   <li>Dean&apos;s Honour List — L100 through L300</li>
+                  <li>UGAANA Scholar</li>
                 </ul>
               </div>
             </Reveal>

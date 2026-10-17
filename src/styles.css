@@ -663,6 +663,64 @@
   .float-card.bottom-right { right: -10px; }
 }
 
+/* ---------- Neural Network Hero Visual ---------- */
+.neural-wrap {
+  position: relative;
+  width: 420px;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.neural-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 0 28px rgba(0, 196, 214, 0.18));
+}
+
+/* Rotating dashed outer ring */
+.neural-ring {
+  animation: neural-ring-spin 40s linear infinite;
+  transform-origin: 210px 210px;
+}
+@keyframes neural-ring-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Centre node breathing glow */
+.neural-center-glow {
+  animation: neural-glow 3s ease-in-out infinite;
+}
+@keyframes neural-glow {
+  0%, 100% { opacity: 0.06; r: 38; }
+  50% { opacity: 0.18; r: 46; }
+}
+
+/* Float cards in neural-wrap context */
+.neural-wrap .float-card.top-left {
+  position: absolute;
+  top: 10px;
+  left: -20px;
+}
+.neural-wrap .float-card.bottom-right {
+  position: absolute;
+  bottom: 30px;
+  right: -20px;
+}
+
+/* Light mode override — nodes need darker bg */
+[data-theme="light"] .neural-svg circle[fill="var(--dark)"] {
+  fill: var(--dark);
+}
+
+@media (max-width: 900px) {
+  .neural-wrap { width: 300px; height: 300px; }
+}
+
+
 /* ---------- Marquee ---------- */
 .marquee {
   background: var(--cyan);
@@ -2973,5 +3031,155 @@ html.dark .gallery-caption p {
   box-shadow: 0 2px 8px rgba(0, 196, 214, 0.4);
 }
 
+/* Amplify Optics Immersion Section & Mentorship Cards */
+.amplify-card {
+  background: rgba(13, 37, 64, 0.7);
+  border: 1px solid rgba(0, 196, 214, 0.25);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--dur-normal) var(--ease-smooth), border-color var(--dur-normal) var(--ease-smooth), box-shadow var(--dur-normal) var(--ease-smooth);
+}
 
+.amplify-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--cyan);
+  box-shadow: 0 12px 36px rgba(0, 196, 214, 0.15);
+}
 
+.amplify-card-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #040F1E;
+}
+
+.amplify-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.5s ease;
+}
+
+.amplify-card:hover .amplify-card-media img {
+  transform: scale(1.03);
+}
+
+.amplify-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(4, 15, 30, 0.85);
+  backdrop-filter: blur(8px);
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 196, 214, 0.3);
+}
+
+.amplify-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.amplify-card-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: #FFFFFF;
+  margin: 0 0 4px 0;
+}
+
+.amplify-role {
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  margin: 0 0 16px 0;
+}
+
+.amplify-quote {
+  background: rgba(0, 196, 214, 0.08);
+  border-left: 3px solid var(--cyan);
+  padding: 10px 14px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #6EE7F0;
+  margin: 0 0 14px 0;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.amplify-desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: rgba(232, 239, 246, 0.85);
+  margin: 0;
+  flex: 1;
+}
+
+/* Lightbox Modal Enhancements */
+.lightbox-tagline {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.lightbox-quote-box {
+  background: rgba(0, 196, 214, 0.08);
+  border-left: 3px solid var(--cyan);
+  padding: 12px 16px;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin: 4px 0;
+}
+
+.lightbox-quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: #6EE7F0;
+  line-height: 1.5;
+  margin: 0 0 6px 0;
+}
+
+.lightbox-cite {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: normal;
+  display: block;
+}
+
+.lightbox-details-box {
+  background: rgba(4, 15, 30, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-top: 4px;
+}
+
+.lightbox-details-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cyan);
+  margin-bottom: 6px;
+}
+
+.lightbox-details-text {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: rgba(232, 239, 246, 0.9);
+  margin: 0;
+}

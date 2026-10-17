@@ -31,22 +31,29 @@ import imgUgQuadrangle from "@/assets/ug-quadrangle-faculty.jpg";
 import imgPreworksDashboard from "@/assets/preworks-dashboard-ui.jpg";
 import imgPreworksCourses from "@/assets/preworks-courses-ui.jpg";
 
-// Newly Added Real Hardware & Research Photos
+// Real Hardware, Research & Fieldwork Photos
 import imgNeovitaIncubator from "@/assets/neovita-ghana-incubator.jpg";
 import imgMechanicalCadModel from "@/assets/mechanical-systems-cad-model.jpg";
 import imgWilfredDefendingMech from "@/assets/wilfred-defending-mechanical.jpg";
 import imgFourierArduino from "@/assets/fourier-arduino-setup.jpg";
 import imgFourierTeam from "@/assets/fourier-team-members.jpg";
 import imgCodeDebuggingPerfect from "@/assets/code-debugging-perfect.jpg";
+import imgFieldTestCletus from "@/assets/field-test-dr-cletus.jpg";
 
-// Technical & Project Visuals
-import imgMultilabel from "@/assets/research-multilabel.jpg";
-import imgAirway from "@/assets/research-airway.jpg";
+// Real Amplify Optics Immersion (Rochester, NY) Photos
+import imgWilfredHongHua from "@/assets/wilfred-hong-hua.png";
+import imgWilfredBrambilla from "@/assets/wilfred-gilberto-brambilla.jpg";
+import imgWilfredKimani from "@/assets/wilfred-kimani-toussaint.jpg";
+import imgWilfredBurrow from "@/assets/wilfred-joshua-burrow.jpg";
+import imgAmplifyGroup2 from "@/assets/amplify-group2-winners.jpg";
+import imgWilfredSarahMoore from "@/assets/wilfred-sarah-moore.jpg";
+import imgWilfredAnoopoma from "@/assets/wilfred-anoopoma-bhowmik.jpg";
+import imgOpticaNametag from "@/assets/optica-nametag-wilfred.jpg";
+import imgWilfredRochester from "@/assets/wilfred-rochester-city.jpg";
+
+// Real Web App & Diagnostic Artifacts
 import imgDeepMammoUi from "@/assets/project-deepmammo-ui.png";
 import imgDeepMammoReport from "@/assets/project-deepmammo-report.png";
-import imgFourier from "@/assets/research-fourier.jpg";
-import imgNaa from "@/assets/research-naa.jpg";
-import imgShap from "@/assets/research-shap.jpg";
 import imgDermaUi from "@/assets/project-dermadetect-ui.png";
 import imgDermaReport from "@/assets/project-dermadetect-report.png";
 
@@ -57,10 +64,10 @@ export const Route = createFileRoute("/gallery")({
       {
         name: "description",
         content:
-          "Visual archive: Research lab, CAD presentations, FEA stress analysis defenses, NeoVita incubator design, AI panels, Operation Smile missions, mentorship, and sports.",
+          "Visual archive: Optica Amplify Immersion (Rochester NY), hardware CAD defenses, NeoVita incubator design, AI panels, Operation Smile missions, sports, and field research.",
       },
       { property: "og:title", content: "Gallery — Wilfred Asumboya" },
-      { property: "og:description", content: "Visual diary of research, projects, and community work." },
+      { property: "og:description", content: "Visual diary of research, fieldwork, and community leadership." },
     ],
     links: [{ rel: "canonical", href: "/gallery" }],
   }),
@@ -69,11 +76,17 @@ export const Route = createFileRoute("/gallery")({
 
 type Category =
   | "All"
+  | "Amplify Optics (NY)"
   | "Hardware & Design"
   | "Research"
   | "Clinical AI & Web"
   | "Leadership & Outreach"
   | "Personal & Sports";
+
+interface GalleryQuote {
+  text: string;
+  author: string;
+}
 
 interface GalleryItem {
   id: string;
@@ -81,6 +94,8 @@ interface GalleryItem {
   category: Category;
   src: string;
   tagline: string;
+  quote?: GalleryQuote;
+  details?: string;
 }
 
 const items: GalleryItem[] = [
@@ -138,10 +153,10 @@ const items: GalleryItem[] = [
   // ── Research ──
   {
     id: "code-debugging-perfect",
-    caption: "ML Pipeline & BioRxiv Code Debugging Session",
+    caption: "Clinical ML Pipeline Debugging Session",
     category: "Research",
     src: imgCodeDebuggingPerfect,
-    tagline: "Wilfred in lab coat with co-author Perfect Agbenorhevi debugging multi-label clinical AI models",
+    tagline: "Wilfred with friend Perfect Agbenorhevi during a machine learning debugging session in the lab",
   },
   {
     id: "fourier-arduino-setup",
@@ -171,40 +186,124 @@ const items: GalleryItem[] = [
     src: imgProfKwofieCert,
     tagline: "Certificate presentation with Prof. Kwofie & senior faculty at UG IAST Research Unit",
   },
+  // ── Amplify Optics Immersion (Rochester, NY) ──
   {
-    id: "multilabel-arch",
-    caption: "Multi-Label Disease Complication Architecture",
-    category: "Research",
-    src: imgMultilabel,
-    tagline: "First-author bioRxiv study · 350-run evaluation of CRF vs Attention heads",
+    id: "wilfred-hong-hua",
+    caption: "With Prof. Hong Hua (University of Arizona)",
+    category: "Amplify Optics (NY)",
+    src: imgWilfredHongHua,
+    tagline: "3D Surgical Displays & Microscopy pioneer · Dialogue on computational imaging vs. physical optics",
+    quote: {
+      text: "Check whether the resolution you want is actually carried by your measurements. If the numerical aperture limits what you capture, no reconstruction can give you information the data never held.",
+      author: "Prof. Hong Hua · University of Arizona",
+    },
+    details:
+      "Discussed the central design dilemma of our Fourier ptychography project with Prof. Hong Hua during the Amplify Optics Immersion in Rochester, NY. Her two-step decision rule: (1) Check the physics — computation only recovers spatial frequencies supported by the measurements; (2) Check the time budget — surgical endoscopes require zero latency and optical zoom, whereas offline clinical diagnostics can afford computational phase retrieval.",
   },
   {
-    id: "airway-seg",
-    caption: "3D Airway Volumetric Segmentation (CT)",
-    category: "Research",
-    src: imgAirway,
-    tagline: "3D U-Net pipeline with combined Dice + BCE loss across 26 validation CT volumes",
+    id: "wilfred-gilberto-brambilla",
+    caption: "With Prof. Gilberto Brambilla (University of Southampton)",
+    category: "Amplify Optics (NY)",
+    src: imgWilfredBrambilla,
+    tagline: "Optoelectronics Research Centre · Sensing, tsunami detection & compute bottlenecks",
+    quote: {
+      text: "Pick a project you care about, estimate how much computing power the machine learning needs to solve it, and build the tools today for the hardware of tomorrow.",
+      author: "Prof. Gilberto Brambilla · University of Southampton",
+    },
+    details:
+      "Discussed sensing architectures with Prof. Gilberto Brambilla. In optical fiber sensing for earthquake and tsunami early warning, data rates reach ~1 GB/s, making data processing speed the primary bottleneck. His advice: design ML pipelines with future edge hardware capabilities in mind and convert raw high-speed sensor streams into structured representations for rapid inference.",
   },
   {
-    id: "fourier-rig",
-    caption: "Fourier Ptychography Computational Microscopy Scheme",
-    category: "Research",
-    src: imgFourier,
-    tagline: "Low-cost computational imaging rig led under Prof. Elsie Effah Kaufmann",
+    id: "wilfred-kimani-toussaint",
+    caption: "With Prof. Kimani Toussaint (Brown University)",
+    category: "Amplify Optics (NY)",
+    src: imgWilfredKimani,
+    tagline: "Optics fundamentals keynote & 1-on-1 dialogue on physical assumptions and device failure (Dr. Joshua Burrow in background)",
+    quote: {
+      text: "A model that corrects a measurement can hide a measurement that was wrong from the start. Return to the physical assumptions first.",
+      author: "Prof. Kimani Toussaint · Brown University",
+    },
+    details:
+      "Engaged with Prof. Kimani Toussaint following his comprehensive lecture on optics from ray optics to quantum electrodynamics. In our one-on-one discussion on pulse oximetry and clinical sensor discrepancies in dark skin tones, Dr. Kimani emphasized that Beer-Lambert assumptions break down under tissue scattering before any ML correction can help — instilling our principle of verifying physical assumptions before training models.",
   },
   {
-    id: "naa-ceramics",
-    caption: "Fort Amsterdam NAA Ceramic Provenance Analysis",
-    category: "Research",
-    src: imgNaa,
-    tagline: "Neutron Activation Analysis of 17th-century colonial ceramics under Prof. Elvis Tiburu",
+    id: "wilfred-joshua-burrow",
+    caption: "With Dr. Joshua Burrow (Morgan State University)",
+    category: "Amplify Optics (NY)",
+    src: imgWilfredBurrow,
+    tagline: "Meta-optics, active beam steering & accessible wearable biophotonic sensors",
+    quote: {
+      text: "Bringing together beam steering and active switching with the speed of light to revolutionize wearable biophotonics.",
+      author: "Dr. Joshua Burrow · Morgan State University",
+    },
+    details:
+      "Mentorship discussion with Dr. Joshua Burrow, Assistant Professor at Morgan State University and former PhD mentee of Prof. Kimani Toussaint. Dr. Burrow shared strategies for designing metasurface optics and optoelectronic switching, exploring how advanced biophotonic sensors can be manufactured for low-cost clinical applications.",
   },
   {
-    id: "shap-rag",
-    caption: "SHAP Explainability & RAG Clinical Framework",
+    id: "amplify-group2-winners",
+    caption: "Group 2 — 2026 Best Presentation Award Winners",
+    category: "Amplify Optics (NY)",
+    src: imgAmplifyGroup2,
+    tagline: "Wilfred with teammates Joseph, Abigail, Solomon, and Victoria receiving the top honors at Amplify Optics",
+    quote: {
+      text: "Awarded Best Presentation among 25 international scholars for computational optics translation in global healthcare.",
+      author: "Amplify Optics Immersion 2026 · Optica",
+    },
+    details:
+      "Group 2 presentation team awarded the 2026 Best Presentation Award at the Amplify Optics Immersion Program in Rochester, NY. The team presented on translating computational microscopy and Fourier ptychography to resource-limited healthcare environments.",
+  },
+  {
+    id: "wilfred-sarah-moore",
+    caption: "With Sarah Moore (Optica Foundation)",
+    category: "Amplify Optics (NY)",
+    src: imgWilfredSarahMoore,
+    tagline: "Program Manager guidance & international research network coordination",
+    details:
+      "With Sarah Moore, Senior Program Manager at the Optica Foundation, at the Amplify Optics banner. Sarah provided end-to-end guidance from the initial application through travel coordination, helping connect Black scientists and engineers in optics worldwide.",
+  },
+  {
+    id: "wilfred-anoopoma-bhowmik",
+    caption: "With Dr. Anoopoma Bhowmik (Optica Foundation)",
+    category: "Amplify Optics (NY)",
+    src: imgWilfredAnoopoma,
+    tagline: "Research career mentorship session · 'Doing It Scared'",
+    quote: {
+      text: "Act despite the fear. Uncertainty should never prevent you from contributing your perspective.",
+      author: "Dr. Anoopoma Bhowmik",
+    },
+    details:
+      "One-on-one mentorship session with Dr. Anoopoma Bhowmik during the Amplify Optics Immersion. Discussed navigating imposter syndrome in top-tier international research environments and the imperative of sharing perspectives from under-resourced healthcare contexts.",
+  },
+  {
+    id: "optica-nametag",
+    caption: "Optica Amplify Optics Immersion Desk & Credentials",
+    category: "Amplify Optics (NY)",
+    src: imgOpticaNametag,
+    tagline: "Official symposium name tag, Edmund Optics precision cleaning cloth & Optica proceedings",
+    details:
+      "Official credentials at the Rochester Riverside Convention Center. Selected as one of 25 scholars worldwide for the September 2026 program, supported by Optica and the Medirevs Fourier Ptychography team.",
+  },
+  {
+    id: "wilfred-rochester-city",
+    caption: "Wilfred in Rochester, NY — 'The World's Imaging Capital'",
+    category: "Amplify Optics (NY)",
+    src: imgWilfredRochester,
+    tagline: "Representing Ghanaian biomedical engineering in national colors on the streets of Rochester",
+    details:
+      "Exploring Rochester, New York — historic birthplace of modern optics, home to the University of Rochester Institute of Optics, Eastman Kodak, and Bausch & Lomb. Representing the University of Ghana and Pan-African biomedical innovation on the global stage.",
+  },
+  {
+    id: "field-test-dr-cletus",
+    caption: "3D Depth Gate & Livestock Computer Vision Field Test",
     category: "Research",
-    src: imgShap,
-    tagline: "Explainable multi-task AI targeting AUROC ≥ 0.85 across 5 vascular complications",
+    src: imgFieldTestCletus,
+    tagline: "Real-time edge livestock gate counter & depth-plane filter with Dr. Cletus Fiifi Adams",
+    quote: {
+      text: "The simulation and the lab are not the same — the bench and the field decide.",
+      author: "Field Test · Dr. Cletus Fiifi Adams Research Group",
+    },
+    details:
+      "Field-testing an edge-deployed computer vision pipeline featuring real-time 3D depth gating (Z-plane thresholding at 3.0m), automated human filtering/suppression, and multi-object tracking. Validated on hardware running at ~10 FPS under ambient lighting and dust conditions.",
   },
 
   // ── Clinical AI & Web ──
@@ -377,6 +476,7 @@ const items: GalleryItem[] = [
 
 const categories: Category[] = [
   "All",
+  "Amplify Optics (NY)",
   "Hardware & Design",
   "Research",
   "Clinical AI & Web",
@@ -402,7 +502,7 @@ function Gallery() {
           </span>
           <h1>Gallery</h1>
           <p className="sub">
-            Research lab, hardware CAD defenses, NeoVita incubator design, AI panels, Operation Smile missions, sports, and music.
+            Optica Amplify Immersion (Rochester, NY), research lab, hardware CAD defenses, NeoVita incubator design, AI panels, Operation Smile missions, sports, and music.
           </p>
         </div>
       </header>
@@ -468,7 +568,21 @@ function Gallery() {
             <div className="lightbox-meta">
               <span className="gallery-cat-tag">{selectedImg.category}</span>
               <h3>{selectedImg.caption}</h3>
-              <p>{selectedImg.tagline}</p>
+              <p className="lightbox-tagline">{selectedImg.tagline}</p>
+              {selectedImg.quote && (
+                <div className="lightbox-quote-box">
+                  <blockquote className="lightbox-quote">
+                    &ldquo;{selectedImg.quote.text}&rdquo;
+                  </blockquote>
+                  <cite className="lightbox-cite">— {selectedImg.quote.author}</cite>
+                </div>
+              )}
+              {selectedImg.details && (
+                <div className="lightbox-details-box">
+                  <span className="lightbox-details-label">Field Notes &amp; Technical Insights</span>
+                  <p className="lightbox-details-text">{selectedImg.details}</p>
+                </div>
+              )}
             </div>
           </div>
         </div>

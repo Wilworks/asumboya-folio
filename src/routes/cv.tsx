@@ -59,8 +59,8 @@ function CV() {
                 <h4>BSc. Biomedical Engineering</h4>
                 <p className="cv-edu-meta">University of Ghana · Expected 2027</p>
                 <p className="cv-edu-desc">
-                  First Class Honours (Dean's Honour List,<br />
-                  Levels 100–300, 2024–2026)<br />
+                  First Class Honours (Distinction)<br />
+                  Dean’s Honour List, Levels 100–300 (2024–2026)<br />
                   UGAANA Scholar (2024)
                 </p>
               </div>
@@ -126,7 +126,7 @@ function CV() {
             <section className="cv-main-section">
               <h3 className="cv-main-heading"><span className="cyan-box"></span> PROFILE</h3>
               <p className="cv-body-text">
-                Biomedical Engineering undergraduate at the University of Ghana researching medical imaging and multi-label clinical prediction, with experience deploying AI applications for healthcare and education. First author of a bioRxiv preprint under review and Head of the AI Department at INNOGEN. In active research correspondence with Prof. Rama Ramakrishnan (MIT Sloan). Combines machine-learning engineering with campus leadership, STEM mentorship, and initiatives connecting student innovation to practical health and education challenges. Driven by a long-term vision of building impactful AI for low-resource healthcare settings in Africa.
+                Biomedical Engineering undergraduate at the University of Ghana researching comorbidity-aware architectures for multi-label clinical prediction, with applied work spanning medical-imaging inference, retrieval-augmented applications, and LLM-assisted reporting. Building toward a research career connecting machine learning to healthcare access in under-resourced settings. Head of AI at INNOGEN and in active research correspondence with Prof. Rama Ramakrishnan (MIT Sloan).
               </p>
             </section>
 
@@ -136,27 +136,53 @@ function CV() {
 
               <div className="cv-job">
                 <div className="cv-job-header">
-                  <h4>Comorbidity-Aware Output-Layer Design for Multi-Label Prediction</h4>
+                  <h4>Comorbidity-Aware Output-Layer Design for Multi-Label Clinical Prediction</h4>
                   <span className="cv-job-date">2025 – Present</span>
                 </div>
-                <p className="cv-job-company">First Author / Lead Researcher · Supervisor: Dr. Cletus Fiifi Adams</p>
+                <p className="cv-job-company">Lead Researcher · Supervisor: Dr. Cletus Fiifi Adams · Correspondence: Prof. Rama Ramakrishnan (MIT Sloan)</p>
                 <ul>
-                  <li>Designed a 350-run controlled study comparing six output-layer interaction mechanisms for multi-label clinical prediction across Type 2 diabetes and myocardial infarction complication settings.</li>
-                  <li>Implemented independent, additive, multiplicative, symmetric CRF, residual MLP, and combined heads in PyTorch; evaluated across five data fractions and seven random seeds.</li>
-                  <li>Developed a samples-to-parameter backbone-matching protocol to ensure methodologically defensible cross-disease comparison; introduced a reverse-inference framework treating winning mechanism identity as a biological instrument for characterising disease co-occurrence structure.</li>
-                  <li>First-author bioRxiv preprint under review (doi: 10.64898/2026.06.18.733068).</li>
+                  <li>Studies whether modeling comorbidity structure in the output layer improves multi-label prediction of diabetes complications. The question began as how a model could handle interacting diseases such as malaria and typhoid without jointly labeled patient data, and was sharpened by guidance from Prof. Rama Ramakrishnan (MIT Sloan) on when an inductive bias helps.</li>
+                  <li>Compared six output-head designs (independent, additive, multiplicative, symmetric CRF, residual MLP, and combined) across five training-data fractions, with backbone initialization matched within conditions for paired comparison.</li>
+                  <li>Extended the study to 20 seeds and added three CRF ablations (frozen-random, fixed to empirical co-occurrence, and a deliberately incorrect asymmetric prior) following Prof. Ramakrishnan’s review. The CRF advantage seen at seven seeds did not survive 20, and the ablations showed no consistent ordering between biologically motivated and incorrect priors.</li>
                 </ul>
               </div>
 
               <div className="cv-job">
                 <div className="cv-job-header">
                   <h4>DeepMammo — Multi-Task Mammography Segmentation &amp; Classification</h4>
-                  <span className="cv-job-date">Mar 2026</span>
+                  <span className="cv-job-date">2026 · Manuscript</span>
                 </div>
-                <p className="cv-job-company">Co-Author · Supervisor: Dr. Cletus Fiifi Adams</p>
+                <p className="cv-job-company">Co-Author (software, data curation, visualization, methodology) · Supervisor: Dr. Cletus Fiifi Adams</p>
                 <ul>
-                  <li>Co-authored a multi-task learning study using a shared EfficientNet encoder, FPN, U-Net decoder, and dual classification heads trained on INbreast and CBIS-DDSM datasets.</li>
-                  <li>Achieved Dice Score 0.87, pathology AUC 0.98, and hold-out accuracy of 93.39%; manuscript under review.</li>
+                  <li>Unified framework that segments lesions and predicts abnormality type and pathology. A shared EfficientNet-B4 encoder and FPN feed an attention U-Net-style decoder and two classification heads, trained jointly on two unpaired datasets (INbreast for segmentation, CBIS-DDSM for classification).</li>
+                  <li>Hold-out results on a single split: Dice 0.870, IoU 0.786, abnormality AUC 0.977, pathology AUC 0.983 with 93.5% sensitivity and 93.1% specificity.</li>
+                  <li>Built the Django/DRF inference service with ONNX Runtime and LLM-assisted PDF reports, reducing the Docker image by about 800 MB (<a href="https://huggingface.co/spaces/WilfredAyine/deepmammo" target="_blank" rel="noreferrer">live demo</a>).</li>
+                </ul>
+              </div>
+
+              <div className="cv-job">
+                <div className="cv-job-header">
+                  <h4>GDHS Maternal Health Risk — Epidemiological Analysis</h4>
+                  <span className="cv-job-date">Apr 2026 – Present · Manuscript in preparation</span>
+                </div>
+                <p className="cv-job-company">Project Lead &amp; Second Author · INNOGEN AI Research</p>
+                <ul>
+                  <li>Led a student team analyzing three pooled Ghana Demographic and Health Survey waves (2008, 2014, 2022; 29,326 women) using a composite risk index built from eight WHO-validated clinical criteria.</li>
+                  <li>Composite maternal risk fell from 68.9% to 32.0%, while anaemia stalled near 20.7% after 2014 and recorded low birth weight rose from 3.63% to 5.43% — a ceiling that expanded facility access alone does not address.</li>
+                  <li>Multi-morbidity (three or more risk criteria at once) fell from 20.8% to 2.4%, while newly created regions in the ecological transition belt (Bono East, Savannah, and Oti) emerged as the highest-risk areas in 2022.</li>
+                </ul>
+              </div>
+
+              <div className="cv-job">
+                <div className="cv-job-header">
+                  <h4>GDHS Maternal Health Risk — Machine Learning Prediction</h4>
+                  <span className="cv-job-date">Apr 2026 – Present · Manuscript in preparation</span>
+                </div>
+                <p className="cv-job-company">Project Lead &amp; Second Author · INNOGEN AI Research</p>
+                <ul>
+                  <li>Led the benchmarking of logistic regression against LightGBM and XGBoost for predicting maternal risk at first antenatal booking from 83 non-invasive features. XGBoost reached AUC-ROC 0.853 ±0.003 under five-fold stratified cross-validation, against 0.801 for logistic regression.</li>
+                  <li>The team’s automated leakage scanner removed every variable derived from the outcome criteria, and SHAP analysis surfaced clinically interpretable drivers such as a sharp rise in risk below 45 kg maternal weight.</li>
+                  <li>Designed for rural clinics without laboratory equipment: the 83 inputs come from a questionnaire of about 10 minutes and can run as offline inference on tablets already deployed in Ghana.</li>
                 </ul>
               </div>
 
@@ -185,13 +211,13 @@ function CV() {
 
               <div className="cv-job">
                 <div className="cv-job-header">
-                  <h4>Fort Amsterdam Ceramic Analysis — Neutron Activation Analysis</h4>
-                  <span className="cv-job-date">Jan 2026</span>
+                  <h4>Nasal High Flow Therapy and End-tidal CO₂ During Hypercarbia</h4>
+                  <span className="cv-job-date">Jan 2026 · Manuscript in preparation</span>
                 </div>
-                <p className="cv-job-company">Supervisor: Prof. Elvis Tiburu Kwason</p>
+                <p className="cv-job-company">Co-Author · Lead author: Dr. Cletus Fiifi Adams</p>
                 <ul>
-                  <li>Conducted elemental analysis of 17th-century colonial ceramic specimens using NAA; processed data in Python (matplotlib/seaborn), ImageJ, and 3D Slicer to confirm artefact shapes and provenance.</li>
-                  <li>Identified one anomalous sample; main group showed a shared coastal clay signature validating Fort Amsterdam's colonial-era pottery sources.</li>
+                  <li>In-vitro study using a 3D-printed adult upper-airway model with piston-driven breathing and simulated apnea of 10 to 40 seconds, testing nasal high flow from 10 to 60 L/min. At 60 L/min, end-tidal CO₂ fell 18% after 40 seconds of apnea.</li>
+                  <li>Raising flow lowered end-tidal CO₂ by about 0.15 mmHg per L/min up to 40 L/min with little further change to 60 L/min, and the peak value after 40 seconds of apnea fell from 8.2% to 7.0% (v/v) at 60 L/min.</li>
                 </ul>
               </div>
 
@@ -218,8 +244,18 @@ function CV() {
                 </div>
                 <p className="cv-job-company">University of Ghana — Institute of Applied Science &amp; Technology · Supervisor: Prof. Samuel Kojo Kwofie</p>
                 <ul>
-                  <li>Contribute to AI-driven healthcare research including medical imaging and digital mental health interventions.</li>
-                  <li>Support data curation, model training, evaluation, and implementation of explainable AI techniques.</li>
+                  <li>Contribute to medical-imaging research through data curation, model training, evaluation, and explainable AI implementation.</li>
+                </ul>
+              </div>
+
+              <div className="cv-job">
+                <div className="cv-job-header">
+                  <h4>DermaVision — Dermatological Screening Prototype</h4>
+                  <span className="cv-job-date">May 2026</span>
+                </div>
+                <p className="cv-job-company">Backend Developer</p>
+                <ul>
+                  <li>Built and deployed a Django/DRF API for a DINOv2-Base classifier across 31 skin disease classes, with ONNX CPU inference and Grad-CAM explanations (<a href="https://huggingface.co/spaces/WilfredAyine/DermaDetect" target="_blank" rel="noreferrer">live demo</a>).</li>
                 </ul>
               </div>
 
@@ -252,38 +288,29 @@ function CV() {
               <h3 className="cv-main-heading"><span className="cyan-box"></span> SELECTED PROJECTS &amp; ENGINEERING DESIGN</h3>
               <ul className="cv-projects-list">
                 <li>
-                  <strong>Sweat-Tolerant Skin Bioelectrode System</strong> (BMEN 306, 2026) — Engineered multi-layer surface bioelectrode combining directional Janus wicking membrane, breathable perforated acrylic backing, and Ag/AgCl hydrogel element to maintain low contact impedance under tropical heat and humidity.
+                  <strong>Edge Vision 3D Depth Gate &amp; Livestock Counter</strong> (2026) — Collaboration with Dr. Cletus Fiifi Adams. Edge computer vision system using calibrated overhead RGB-D depth sensing, optical flow, and boundary tracking for automated livestock counting in rural environments; running at 9.8 FPS on embedded edge hardware.
                 </li>
                 <li>
-                  <strong>NeoVita Ghana — Neonatal Monitor Mechanical Enclosure</strong> (BMEN 322, 2026) — Modular IP54-rated neonatal vital signs monitor enclosure for district hospitals. Optical-grade polycarbonate viewing panel, flame-retardant ABS housing, FEA drop-test validation, and passive convection cooling.
-                </li>
-                <li>
-                  <strong>Cable-Actuated PIP Extension Orthosis</strong> (BMEN 308, 2026) — Wrist-mounted active extension orthosis for PIP joint contracture and post-stroke hand rehabilitation, utilizing Bowden cable transmission and micro-ratchet tension adjustment.
-                </li>
-                <li>
-                  <strong>DermaVision</strong> (May 2026) —{" "}
-                  <a href="https://huggingface.co/spaces/WilfredAyine/DermaDetect" target="_blank" rel="noreferrer">Interactive Demo ↗</a>
-                  {" "}· Django/DRF inference API demo serving a DINOv2-Base vision model (31 skin disease classes, ONNX export); full pipeline with GradCAM, Groq LLM clinical reports, and ReportLab PDFs via Docker on Hugging Face Spaces.
-                </li>
-                <li>
-                  <strong>DeepMammo Inference API</strong> (May 2026) —{" "}
+                  <strong>DeepMammo Clinical Inference API</strong> (May 2026) —{" "}
                   <a href="https://huggingface.co/spaces/WilfredAyine/deepmammo" target="_blank" rel="noreferrer">Interactive Demo ↗</a>
-                  {" "}· Mammography REST API prototype returning abnormality type, pathology prediction, segmentation mask, GradCAM, and LLM PDF report from a single POST request. ONNX export cut Docker image size ~800 MB.
+                  {" "}· Mammography REST API prototype returning abnormality type, pathology prediction, lesion segmentation mask, Grad-CAM heatmaps, and LLM-assisted PDF report from a single POST request. ONNX export reduced Docker container footprint by ~800 MB.
                 </li>
                 <li>
-                  <strong>Llama Fine-Tuning Pipeline (LoRA)</strong> (2026) — Configuration-driven modular pipeline for parameter-efficient LLM fine-tuning with architecture-aware attention-module selection, activation/gradient checkpointing, dynamic device mapping, and FP16/FP32 mixed precision.
+                  <strong>DermaVision Screening API</strong> (May 2026) —{" "}
+                  <a href="https://huggingface.co/spaces/WilfredAyine/DermaDetect" target="_blank" rel="noreferrer">Interactive Demo ↗</a>
+                  {" "}· Django/DRF inference API demo serving a DINOv2-Base vision model across 31 skin disease classes (ONNX CPU runtime); full pipeline with Grad-CAM visual explanations and automated clinical reports via Docker on Hugging Face Spaces.
                 </li>
                 <li>
-                  <strong>Nexus Intellisense</strong> (2025 – Present) — Django-based multi-task clinical AI system demo with SHAP explainability, RAG-powered recommendations, and end-to-end inference pipeline for low-resource healthcare.
+                  <strong>BEMS-Lite: Hospital Biomedical Equipment Management</strong> (2026) — Offline-first desktop engineering application for low-resource district hospitals. Features local SQLite storage with Turso cloud synchronization, preventative maintenance scheduling, and automated PDF/Excel compliance reporting.
                 </li>
                 <li>
-                  <strong>NSTP Chatbot</strong> (2025 – 2026) — Django CBT mental health chatbot demo identifying negative self-talk; local Ollama + Perplexity LLMs with RAG cognitive-distortion detection. Supervisor: Prof. S. K. Kwofie.
+                  <strong>Sweat-Tolerant Skin Bioelectrode System</strong> (BMEN 306, 2026) — Engineered multi-layer surface bioelectrode combining directional Janus wicking membrane, breathable perforated acrylic backing, and Ag/AgCl hydrogel element to maintain low contact impedance (&lt; 5 kΩ) under tropical heat (35°C) and 85% relative humidity.
                 </li>
                 <li>
-                  <strong>MindMesh &amp; EquiBase</strong> — AI study platform with RAG research summaries (MindMesh); Django biomedical device management system with real-time dashboards and lifecycle tracking (EquiBase).
+                  <strong>NeoVita Ghana — Neonatal Monitor Mechanical Enclosure</strong> (BMEN 322, 2026) — Modular IP54-rated neonatal vital signs monitor enclosure for district hospitals. Optical-grade polycarbonate viewing panel, flame-retardant ABS housing, FEA drop-test validation (1.2m), and passive convection cooling up to 40°C ambient room temperature.
                 </li>
                 <li>
-                  <strong>Additional Prototypes:</strong> BEMS-Lite offline-first hospital equipment management desktop app (Turso cloud sync, PDF/Excel reporting); GoldManager inventory app with GHS currency support; Voice Cloning pipeline; SGLT2 compound classification with RDKit; Weather tracking mobile app.
+                  <strong>Cable-Actuated PIP Extension Orthosis</strong> (BMEN 308, 2026) — Wrist-mounted active extension orthosis for PIP joint contracture and post-stroke hand rehabilitation, utilizing Bowden cable transmission and micro-ratchet tension adjustment (F &lt; 15 N).
                 </li>
               </ul>
             </section>
@@ -293,16 +320,20 @@ function CV() {
               <h3 className="cv-main-heading"><span className="cyan-box"></span> PUBLICATIONS</h3>
               <ul className="cv-bullets">
                 <li>
-                  <strong>Wilfred Ayine Asumboya</strong>, Perfect Kwasi Agbenorhevi, Cletus Fiifi Adams, Dennis Ayinsune Ayariga, Thaddeus Adjadeh, Shamsudini Adam Ziblim, Samuel Kojo Kwofie. Comorbidity structure as an inductive bias: Comparing output-head designs for multi-label prediction of diabetes and myocardial infarction complications. <em>2026. Preprint; under review.</em> doi: 10.64898/2026.06.18.733068
-                </li>
-                <li>
                   Safiu Sumani Benina, Chrysol Owusua Amoah-Bamfoa, Ethel Enam Nyamadora, Rhoda Yayra Kuwordea, Rowland Pittman Arthur, Cletus Fiifi Adams, Samuel Kojo Kwofie, <strong>Wilfred Ayine Asumboya</strong>. DeepMammo: A Multi-Task Learning Framework for Joint Lesion Segmentation and Hierarchical Classification in Mammography. <em>2026. Under review.</em>
                 </li>
                 <li>
                   Cletus F. Adams, Patrick H. Geoghegan, Mark C. Jermy, <strong>Wilfred A. Asumboya</strong>. In-vitro Modelling of the Effect of Nasal High Flow Therapy on End-tidal Tracheal CO₂ Tension During Hypercarbia. <em>2026. In preparation.</em>
                 </li>
+                <li>
+                  <strong>Wilfred Ayine Asumboya</strong> et al. Trends in Maternal Health Risk in Ghana: Evidence from Three Rounds of the Demographic and Health Survey (2008–2022). <em>Manuscript in preparation.</em> INNOGEN AI Research.
+                </li>
+                <li>
+                  <strong>Wilfred Ayine Asumboya</strong> et al. Machine Learning Prediction of Maternal Risk at First Antenatal Booking from Non-Invasive Features: An XGBoost-Led Benchmark on the Ghana DHS. <em>Manuscript in preparation.</em> INNOGEN AI Research.
+                </li>
               </ul>
             </section>
+
 
             {/* Leadership */}
             <section className="cv-main-section">
@@ -310,12 +341,12 @@ function CV() {
 
               <div className="cv-job">
                 <div className="cv-job-header">
-                  <h4>Head, AI Department</h4>
+                  <h4>Co-Founder &amp; Head, AI Department</h4>
                   <span className="cv-job-date">2025 – Present</span>
                 </div>
                 <p className="cv-job-company">INNOGEN — Institute for Innovation and Next-Generation Engineering · Accra, Ghana</p>
                 <ul>
-                  <li>Lead a research and engineering team building intelligent systems addressing challenges in West Africa — maternal health risk stratification, flood risk mapping, satellite-based galamsey detection, and water pollution detection.</li>
+                  <li>Co-founded and lead a research and engineering team building intelligent systems addressing challenges in West Africa — maternal health risk stratification, flood risk mapping, satellite-based galamsey detection, and water pollution detection.</li>
                 </ul>
               </div>
 
@@ -373,9 +404,10 @@ function CV() {
             <section className="cv-main-section">
               <h3 className="cv-main-heading"><span className="cyan-box"></span> AWARDS &amp; RECOGNITION</h3>
               <ul className="cv-bullets">
-                <li>Dean's Honour List — School of Engineering Sciences, University of Ghana (Levels 100–300, 2024–2026)</li>
+                <li>Dean’s Honour List — School of Engineering Sciences, University of Ghana (Levels 100–300, 2024–2026)</li>
                 <li>UGAANA Scholar — University of Ghana Alumni Association of North America (2024)</li>
-                <li>Panelist, "AI for Humanity: Opportunity, Responsibility, and the Future We Want" — University of Ghana &amp; Nelson Mandela University student panel on the UN Independent International Scientific Panel on AI's Preliminary Report (Jul 2026)</li>
+                <li>Optica Amplify Optics Immersion Program — Selected as one of 25 students worldwide; Group 2 received the 2026 Best Presentation Award for work on low-cost Fourier Ptychography microscopy (Sep 2026)</li>
+                <li>Panelist, “AI for Humanity: Opportunity, Responsibility, and the Future We Want” — University of Ghana &amp; Nelson Mandela University student panel on the UN Independent International Scientific Panel on AI’s Preliminary Report (Jul 2026)</li>
                 <li>Certificate of Honour, Pre-Works Initiative — GSBE-UG recognition for leadership as CEO &amp; Founder and for driving development of the GSBE-UG website (2025)</li>
                 <li>Harvard Health Systems Innovation Lab Hackathon — Participant, 7th Edition: Building High-Value Health Systems: Leveraging AI · Accra Hub, University of Ghana (Apr 2025) · Team Pre-Works</li>
                 <li>NSMQ Superstar Spotlight — Featured by Prof. Elsie Effah Kaufmann for excellence in science and mathematics; Upper East Regional Winner &amp; National 1/8 Finalist (2022)</li>
