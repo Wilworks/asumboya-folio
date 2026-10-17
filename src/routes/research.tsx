@@ -49,7 +49,7 @@ const projects: {
   {
     status: "Ongoing", pillClass: "pill-cyan",
     title: "GDHS Maternal Health Risk — Epidemiological Analysis",
-    supervisor: "Project Lead & Second Author · INNOGEN AI Research",
+    supervisor: "Lab Lead & Second Author · INNOGEN AI Research",
     meta: "Ghana DHS 2008 · 2014 · 2022 · 29,326 women · Composite risk index · WHO-validated criteria · Manuscript in preparation",
     desc: "Led a student team analyzing three pooled Ghana Demographic and Health Survey waves (2008, 2014, 2022; 29,326 women) using a composite risk index built from eight WHO-validated clinical criteria. Composite maternal risk fell from 68.9% to 32.0%, while anaemia stalled near 20.7% after 2014 and recorded low birth weight rose from 3.63% to 5.43% — a ceiling that expanded facility access alone does not address. Multi-morbidity (three or more risk criteria) fell from 20.8% to 2.4%, while newly created regions in the ecological transition belt (Bono East, Savannah, and Oti) emerged as the highest-risk areas in 2022.",
     key: "Composite risk: 68.9% → 32.0%. Low birth weight: 3.63% → 5.43% — structural ceiling not addressable by facility access alone.",
@@ -57,7 +57,7 @@ const projects: {
   {
     status: "Ongoing", pillClass: "pill-cyan",
     title: "GDHS Maternal Health Risk — Machine Learning Prediction",
-    supervisor: "Project Lead & Second Author · INNOGEN AI Research",
+    supervisor: "Lab Lead & Second Author · INNOGEN AI Research",
     meta: "83 non-invasive features · XGBoost · LightGBM · Logistic Regression · SHAP · 5-fold stratified CV · Manuscript in preparation",
     desc: "Led benchmarking of logistic regression against LightGBM and XGBoost for predicting maternal risk at first antenatal booking from 83 non-invasive features. The team's automated leakage scanner removed every variable derived from the outcome criteria, and SHAP analysis surfaced clinically interpretable drivers — including a sharp rise in risk below 45 kg maternal weight. Designed for rural clinics without laboratory equipment: 83 inputs come from a ~10-minute questionnaire and can run as offline inference on tablets already deployed in Ghana.",
     key: "XGBoost AUC-ROC 0.853 ±0.003 (5-fold stratified CV) vs. 0.801 logistic regression. Offline-capable on tablets already deployed in Ghana.",

@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
       { title: "Wilfred Asumboya — Biomedical AI Researcher & ML Engineer" },
       { name: "description", content: "Biomedical Engineering undergraduate at University of Ghana researching comorbidity-aware neural architectures, edge clinical AI, and physiological sensing." },
       { property: "og:title", content: "Wilfred Asumboya — Biomedical AI Researcher & ML Engineer" },
-      { property: "og:description", content: "Biomedical AI researcher · First author & multi-paper co-author · Co-Founder & Head of AI at INNOGEN · Maternal health, comorbidity modelling, medical imaging." },
+      { property: "og:description", content: "Biomedical AI researcher · Co-Founder & Head of AI at INNOGEN · Multi-paper co-author · Maternal health, comorbidity modelling, medical imaging." },
     ],
     links: [{ rel: "canonical", href: "/" }],
   }),

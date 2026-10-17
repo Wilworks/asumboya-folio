@@ -165,7 +165,7 @@ function CV() {
                   <h4>GDHS Maternal Health Risk — Epidemiological Analysis</h4>
                   <span className="cv-job-date">Apr 2026 – Present · Manuscript in preparation</span>
                 </div>
-                <p className="cv-job-company">Project Lead &amp; Second Author · INNOGEN AI Research</p>
+                <p className="cv-job-company">Lab Lead &amp; Second Author · INNOGEN AI Research</p>
                 <ul>
                   <li>Led a student team analyzing three pooled Ghana Demographic and Health Survey waves (2008, 2014, 2022; 29,326 women) using a composite risk index built from eight WHO-validated clinical criteria.</li>
                   <li>Composite maternal risk fell from 68.9% to 32.0%, while anaemia stalled near 20.7% after 2014 and recorded low birth weight rose from 3.63% to 5.43% — a ceiling that expanded facility access alone does not address.</li>
@@ -178,7 +178,7 @@ function CV() {
                   <h4>GDHS Maternal Health Risk — Machine Learning Prediction</h4>
                   <span className="cv-job-date">Apr 2026 – Present · Manuscript in preparation</span>
                 </div>
-                <p className="cv-job-company">Project Lead &amp; Second Author · INNOGEN AI Research</p>
+                <p className="cv-job-company">Lab Lead &amp; Second Author · INNOGEN AI Research</p>
                 <ul>
                   <li>Led the benchmarking of logistic regression against LightGBM and XGBoost for predicting maternal risk at first antenatal booking from 83 non-invasive features. XGBoost reached AUC-ROC 0.853 ±0.003 under five-fold stratified cross-validation, against 0.801 for logistic regression.</li>
                   <li>The team’s automated leakage scanner removed every variable derived from the outcome criteria, and SHAP analysis surfaced clinically interpretable drivers such as a sharp rise in risk below 45 kg maternal weight.</li>
@@ -326,10 +326,10 @@ function CV() {
                   Cletus F. Adams, Patrick H. Geoghegan, Mark C. Jermy, <strong>Wilfred A. Asumboya</strong>. In-vitro Modelling of the Effect of Nasal High Flow Therapy on End-tidal Tracheal CO₂ Tension During Hypercarbia. <em>2026. In preparation.</em>
                 </li>
                 <li>
-                  <strong>Wilfred Ayine Asumboya</strong> et al. Trends in Maternal Health Risk in Ghana: Evidence from Three Rounds of the Demographic and Health Survey (2008–2022). <em>Manuscript in preparation.</em> INNOGEN AI Research.
+                  Lead Author et al., <strong>Wilfred Ayine Asumboya</strong> (Lab Lead &amp; Second Author). Trends in Maternal Health Risk in Ghana: Evidence from Three Rounds of the Demographic and Health Survey (2008–2022). <em>Manuscript in preparation.</em> INNOGEN AI Research.
                 </li>
                 <li>
-                  <strong>Wilfred Ayine Asumboya</strong> et al. Machine Learning Prediction of Maternal Risk at First Antenatal Booking from Non-Invasive Features: An XGBoost-Led Benchmark on the Ghana DHS. <em>Manuscript in preparation.</em> INNOGEN AI Research.
+                  Lead Author et al., <strong>Wilfred Ayine Asumboya</strong> (Lab Lead &amp; Second Author). Machine Learning Prediction of Maternal Risk at First Antenatal Booking from Non-Invasive Features: An XGBoost-Led Benchmark on the Ghana DHS. <em>Manuscript in preparation.</em> INNOGEN AI Research.
                 </li>
               </ul>
             </section>
